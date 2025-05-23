@@ -50,7 +50,7 @@ pip install ogb==1.3.6
 pip install pandas torchmetrics Deprecated
 ```
 ## Data
-The experiments are conducted on six public real-world datasets, i.e., Cora, Pubmed, Facebook, Bitcoin, Flickr, OGB-arxiv which can be automatically downloaded to `./data` through torch-geometric API.
+The experiments are conducted on six public real-world datasets, i.e., Cora, Pubmed, Facebook, Bitcoin, Flickr, and OGB-arxiv which can be automatically downloaded to `./data` through torch-geometric API.
 
 ## Training
 
@@ -77,12 +77,12 @@ Our model achieves the following performance on(ASR | CA) :
 
 |Dataset   | GTA | UGBA | DPGBA |EUMC|
 | -------- |------- | --- | ---- |------ |
-|     Cora     |  0.75 \| 0.82 | 0.76 \| 0.82 | 0.78 \| 0.81 | 0.97 \| 0.81 |
-|    Pubmed    | 0.25 \| 0.69 | 0.51 \| 0.70 | 0.09 \| 0.71 | 0.91 \| 0.76 |
-|     Flickr   |    GPL | 0.51 \| 0.21 | 0.63 \| 0.26 | 0.46 \| 0.29 | 0.99 \| 0.34 |
-|     Facebook |    GSL | 0.79 \| 0.87 | 0.79 \| 0.86 | 0.66 \| 0.87 | 0.96 \| 0.84 |
-|  Bicoin      |    GCL | 1.00 \| 0.20 | 0.67 \| 0.84 | 0.23 \| 0.84 | 0.93 \| 0.84 |
-|    OGB-arxiv |    GPL | 0.54 \| 0.39 | 0.65 \| 0.50 | 0.82 \| 0.45 | 1.00 \| 0.44 |
+|     Cora     | 87.7\|77.4 | 83.1\|73.4 | 87.3\|82.5 | 97.4\|82.4 |
+|    Pubmed    | 86.9\|84.8 | 88.\9|84.7 | 91.5\|85.3 | 96.4\|83.9 |
+|     Flickr   | 93.1\|42.6 | 24.6\|43.4 | 53.5\|45.2 | 90.4\|44.5 |
+|     Facebook | 76.0\|85.9 | 84.9\|85.8 | 86.6\|85.8 | 91.7\|83.8 |
+|     Bicoin   | 79.2\|78.3 | 76.4\|78.3 | 80.1\|78.3 | 90.6\|78.3 |
+|    OGB-arxiv | 68.4\|65.6 | 63.7\|64.9 | 68.8\|64.9 | 83.8\|65.3 |
 
 
 
