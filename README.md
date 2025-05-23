@@ -14,7 +14,7 @@ EUMC is an innovative framework designed to address the critical issue of crafti
 
 **Contributions:**
 -  **Problem Exploration:** We focus on the challenging problem of effective and unnoticeable multi-category graph backdoor attack
--  **Method Development:** We design a novel framework that constructs a multi-category subgraph trigger pattern (MC-STP) from the attacked graph. We also develop a “select then attach” strategy to ensure the unnoticeability and effectiveness of the multi-category graph backdoor attacks.
+-  **Method Development:** We design a novel framework that constructs a multi-category subgraph trigger pool (MC-STP) from the attacked graph. We also develop a “select then attach” strategy to ensure the unnoticeability and effectiveness of the multi-category graph backdoor attacks.
 
 ## Overview
 
