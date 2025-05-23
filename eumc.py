@@ -105,7 +105,7 @@ class PromptPool(torch.nn.Module):
             if dropout > 0:
                 layers.append(nn.Dropout(p=dropout))
         
-        self.layers = nn.Sequential(*layers).to(device)#MLP初始化prompt
+        self.layers = nn.Sequential(*layers).to(device)
         if args.mode:
             self.feat = nn.Linear(feature.shape[1],args.prompt_size*feature.shape[1]).to(device)
         else:
@@ -127,7 +127,7 @@ class PromptPool(torch.nn.Module):
         promptpool = []
         _,edges,index_list = cluster_subgraph(encoder,self.feature,subgraph_edges,subgraph_nodes,self.args.num_prompts,self.args,self.device)
         
-        # prompt 特征
+        # prompt
         for idx in index_list:
             prompt = self.feature[list(subgraphs[idx].nodes())]
             promptpool.append(prompt)
@@ -138,11 +138,11 @@ class PromptPool(torch.nn.Module):
         #     random_index = torch.randint(0, promptpool.shape[1], (1,))[0].item()
         #     selected_prompt = promptpool[i, random_index, :]
         #     selected_prompts.append(selected_prompt)
-        # self.selected_prompts = torch.stack(selected_prompts)# 每个prompt的代表节点特征
+        # self.selected_prompts = torch.stack(selected_prompts)
     
         self.promptPool =nn.Parameter(promptpool.clone().detach()) 
 
-        # prompt 对应的edge_index 矩阵
+        # prompt
         self.promptEdges = edges
         
         
@@ -176,9 +176,9 @@ class UIAP(torch.nn.Module):
         self.weights = None
         self.data = data
         self.homo = Homo(data.x.shape[1],args.hidden,device)
-        self.prompt = PromptPool(args,device,data.x.clone(),idx_attach,data.edge_index.clone(),data.y.clone()).to(device)#center 的features
+        self.prompt = PromptPool(args,device,data.x.clone(),idx_attach,data.edge_index.clone(),data.y.clone()).to(device)
         self.idx_attach = idx_attach
-    #  触发器内部的边
+    
     def get_trigger_index(self):
         
         edge_list = []
@@ -192,7 +192,7 @@ class UIAP(torch.nn.Module):
     
     def get_inject_edge(self,start,injected_features, idx_attach,mode,edge=None):
         
-        idx_feature = self.features[idx_attach]  # 把 idx_attach 对应的特征变为 [1, feature_dim]
+        idx_feature = self.features[idx_attach]  #
         similarities = F.cosine_similarity(idx_feature, injected_features, dim=1)
         index = similarities.argmax()
         
@@ -233,7 +233,7 @@ class UIAP(torch.nn.Module):
             origin_edge = unique_edges.t()
             edge_list = []  
             
-            # 根据阈值连边
+            
             high_similarity_indices = torch.where(similarities > self.args.test_thr)[0] 
             connect_num = high_similarity_indices.size(0)
             if high_similarity_indices.numel() == 0: 
@@ -242,13 +242,13 @@ class UIAP(torch.nn.Module):
             
             
             for i in high_similarity_indices:  
-                # 注意：这里我们直接使用index，因为它会自动从0开始，达到size-1  
-                # 但实际上，我们想要的是start+index  
+          
+                  
                 target_index = start + i  
                 edge = torch.tensor([[idx_attach], [target_index]], dtype=torch.long).to(self.device)  
                 edge_list.append(edge)  
             
-            # 使用torch.cat沿着第二维（列）合并所有的边  
+            
             new_edge = torch.cat(edge_list, dim=1).to(self.device)
         
             adjusted_edge_index = origin_edge + start
@@ -261,97 +261,21 @@ class UIAP(torch.nn.Module):
     def getFineTune(self,trojan_feat):
         if self.args.finetune:
             prompts_x = self.homo(trojan_feat)
-            # if self.args.exp==4:# 实验四 features[idx,:] 先过homo提取嵌入选择!!!!!
-            #     prompts_x = self.homo(trojan_feat)
-            # elif self.args.exp==5:# 实验五 无结构信息GCN 
-            #     # edge_index = adj_to_edges(torch.eye(self.args.prompt_size))
-            #     # # edge_index = adj_to_edges(torch.ones((self.args.prompt_size, self.args.prompt_size)))
-            #     # edge_index = edge_index.to(self.device)
-            #     # trojan_feat = trojan_feat.reshape(-1,self.args.prompt_size,trojan_feat.shape[1])
-            #     # new_prompt_pool = list(trojan_feat)
-                
-            #     # data_list = []
-            #     # for feature in new_prompt_pool:
-            #     #     x = feature
-            #     #     # 创建 Data 对象，每个图都由其边和节点特征构成
-            #     #     data = Data(x=x, edge_index=edge_index)
-            #     #     data_list.append(data)
-
-            #     # batch = Batch.from_data_list(data_list)
-            #     # if self.args.new=="Y":
-            #     #     prompts_x = self.homo(batch.x,batch.edge_index,None)
-            #     # else:
-            #     #     embedding = self.homo.get_h(batch.x,batch.edge_index,None)
-            #     #     prompts_x = self.homo.gcnDecode(embedding,batch.edge_index,None)
-            #     # prompts_x = prompts_x.reshape(-1,self.args.prompt_size,prompts_x.shape[1])
-            #     prompts_x = self.homo(trojan_feat)
-            # elif self.args.exp==6:# 实验六 有结构信息的旧的GCN
-            #     pass
-            #     # 先embdeding攻击节点
+           
             return prompts_x 
         else:
             return trojan_feat
-            # new_prompt_pool = list(prompt_pool)
-            # new_edges_pool = adj_to_edges_batch(edges_pool.detach().cpu())
-            # data_list = []
-            # for edge ,feature in zip(new_edges_pool,new_prompt_pool):
-            #     edge_index = edge.to(self.device)
-            #     x = feature
-            #     # 创建 Data 对象，每个图都由其边和节点特征构成
-            #     data = Data(x=x, edge_index=edge_index)
-            #     data_list.append(data)
-
-            # batch = Batch.from_data_list(data_list)
-            
-            # embedding = self.encoder.get_h(batch.x,batch.edge_index,None)
-            # prompt_pool_embedding = self.encoder.decode(embedding)
-            # prompt_pool_embedding = prompt_pool_embedding.reshape(-1,self.args.prompt_size,prompt_pool_embedding.shape[1])
-        
-    # 通过prompt_pool、weights_pool生成idx_attach的trojan图
-    
+          
     def get_trojan(self,edges_pool,prompt_pool,weights_pool,idx_attach,features,total_edge_index,target_classes,mode='F'):
         trojan_feat_list = []
         trojan_weight_list = []
         trojan_edge_list = []
         start = len(features)
         origin_feat = []
-        if self.args.exp==6 or self.args.exp==7:#有结构信息，选择
+        if self.args.exp==6 or self.args.exp==7:
             attack_embedding = []
             
             
-            # for idx in idx_attach:
-                
-            #     subgraph_node_idx, subgraph_edge_index, _, node_mask = k_hop_subgraph([idx], 2, total_edge_index, relabel_nodes=True)
-                
-            #         # subgraph_node_idx, subgraph_edge_index, _, node_mask = k_hop_subgraph([idx], 2, self.edge_index, relabel_nodes=True)
-                
-            #     subgraph_features = features[subgraph_node_idx]
-                
-            #     sub_embedding = self.encoder.get_h(subgraph_features,subgraph_edge_index,None)
-               
-            #     sub_prompt = self.encoder.decode(sub_embedding)
-                
-            #     idx_in_subgraph = (subgraph_node_idx == idx).nonzero(as_tuple=True)[0].item()
-            #     # 从 sub_prompt 中提取特定节点的特征
-            #     idx_feature = sub_prompt[idx_in_subgraph]
-            #     attack_embedding.append(idx_feature)
-           
-            # attack_nodes_embedding = torch.stack(attack_embedding)
-            # new_prompt_pool = list(prompt_pool)
-            # new_edges_pool = adj_to_edges_batch(edges_pool.detach().cpu())
-            # data_list = []
-            # for edge ,feature in zip(new_edges_pool,new_prompt_pool):
-            #     edge_index = edge.to(self.device)
-            #     x = feature.to(self.device)
-            #     # 创建 Data 对象，每个图都由其边和节点特征构成
-            #     data = Data(x=x, edge_index=edge_index)
-            #     data_list.append(data)
-
-            # batch = Batch.from_data_list(data_list)
-            # embedding = self.encoder.get_h(batch.x,batch.edge_index,None)
-            # embed_pool =self.encoder.decode(embedding)
-            # embed_pool = embed_pool.reshape(-1,self.args.prompt_size,embed_pool.shape[1])
-        # 实验6 features[idx,:]/prompt_pool送入GCN，embedding选择
         
         if self.args.position:
             embed_pool = self.getFineTune(prompt_pool)
@@ -395,19 +319,19 @@ class UIAP(torch.nn.Module):
             if self.args.exp==4 or self.args.exp==5:
                 insert_edge_index,connect_num = self.get_inject_edge(start,prompt,idx,'N')
                 insert_edge_index = insert_edge_index.to(self.device)
-                trojan_edge_list.append(insert_edge_index)# 全连接
+                trojan_edge_list.append(insert_edge_index)#
                 
             elif self.args.exp==6:
                 # pass
                 edge = adj_to_edges(edge).to(self.device)
                 insert_edge_index,connect_num =self.get_inject_edge(start,prompt,idx,'Y',edge=edge)
                 insert_edge_index = insert_edge_index.to(self.device)
-                trojan_edge_list.append(insert_edge_index)# 原图edge
+                trojan_edge_list.append(insert_edge_index)
                 
             elif self.args.exp==7:
                 insert_edge_index,connect_num = self.get_inject_edge(start,prompt,idx,'N')
-                trojan_edge_list.append(insert_edge_index)# 全连接
-            elif self.args.exp==8: # 全连接idx
+                trojan_edge_list.append(insert_edge_index)#
+            elif self.args.exp==8: 
                 edge = adj_to_edges(edge).to(self.device)
                 insert_edge_index,connect_num = self.get_inject_edge(start,prompt,idx,'F',edge=edge)
                 insert_edge_index = insert_edge_index.to(self.device)
@@ -416,7 +340,7 @@ class UIAP(torch.nn.Module):
             start+=self.args.prompt_size
             if self.args.exp==7:
                 pass
-                # trojan_edge_list.append(self.get_inject_edge(start,s_prompt,idx,'Y',edge=edge).to(self.device))# 原图edge
+                # trojan_edge_list.append(self.get_inject_edge(start,s_prompt,idx,'Y',edge=edge).to(self.device))#
                 # start+=self.args.prompt_size
             if self.args.exp==4 or self.args.exp==5 or self.args.exp==6:
                 weight = weight[:int(trojan_edge_list[-1].shape[1]/2)-1]
@@ -445,7 +369,7 @@ class UIAP(torch.nn.Module):
             regularization_loss = torch.norm(trojan_feat - origin_feat, p=2)
         return trojan_feat, trojan_weights,trojan_edge,regularization_loss
 
-    # 生成默认idx_attach的poison 图 都变为target-labels
+    
     def get_attach_poision(self, idx_attach, features,edge_index,edge_weight,device,target):
         self.prompt = self.prompt.to(device)
         idx_attach = idx_attach.to(device)
@@ -474,7 +398,7 @@ class UIAP(torch.nn.Module):
         
         return poison_x, poison_edge_index, poison_edge_weights,trojan_feat,trojan_edge,target_classes
     
-    # 生成默认idx_attach的poison 图 随机变为target-labels
+    
     def get_random_attach_poision(self, idx_attach, labels,features,edge_index,edge_weight,device):
         self.prompt = self.prompt.to(device)
         idx_attach = idx_attach.to(device)
@@ -529,7 +453,7 @@ class UIAP(torch.nn.Module):
         for u, v in node_pairs:
             edges.append([v, u])
         
-        # 转换为 PyTorch 张量
+        
         full_connected_edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
         label1 = []
         label2 = []
@@ -622,10 +546,10 @@ class UIAP(torch.nn.Module):
         
         self.edge_index = edge_index
         self.edge_weights = edge_weight
-        # prompt 选择 暂时未使用
+        
         self.selector = PromptSelector(args,device,self.features.shape[1])
         
-        # 负责聚类子图初始化prompt
+        
         # self.newEncoder = GCN_Encoder(self.features.shape[1], self.args.hidden,labels.max().item()+1,device=device).to(device)
         self.encoder = GCN_Encoder(self.features.shape[1], self.args.hidden,labels.max().item()+1,layer=1,device=device).to(device)
         import os
@@ -671,7 +595,7 @@ class UIAP(torch.nn.Module):
         optimizer_selector = optim.Adam(self.selector.parameters(),lr=self.args.train_lr, weight_decay=self.args.weight_decay)
         optimizer_surrogate = optim.Adam(self.surrogate_model.parameters(), lr=args.train_lr, weight_decay=args.weight_decay)
         optimizer_prompt_pool = optim.Adam(self.prompt.parameters(), lr=args.train_lr, weight_decay=args.weight_decay)
-        optimizer_homo = torch.optim.Adam(self.homo.parameters(), lr=args.train_lr, weight_decay=args.weight_decay)  # 根据需要调整学习率
+        optimizer_homo = torch.optim.Adam(self.homo.parameters(), lr=args.train_lr, weight_decay=args.weight_decay)  
         
         rs = np.random.RandomState(self.args.seed)
         idx_outter = torch.cat([idx_attach,idx_unlabeled[rs.choice(len(idx_unlabeled),size=512,replace=False)]])
@@ -927,7 +851,7 @@ class UIAP(torch.nn.Module):
                     optimizer_homo.step()
                     optimizer_selector.step()   
                 
-                # 评估阶段
+                
                 if (i+1) % self.args.val_feq == 0:
                     self.prompt.eval()
                     self.homo.eval()
@@ -1046,7 +970,7 @@ class UIAP(torch.nn.Module):
                         total_weights = {'weights': weights, 'homo_weights': homo_weights,'label_full':label_full,'label_origin':label_origin,'orginLabels':orginLabels,'val_idx_attach':val_idx_attach}  
                         torch.save(total_weights, './parameters/{}_{}.pth'.format(self.args.dataset,self.args.index))
                     
-                        early_stop_counter = 0  # 重置早停计数器
+                        early_stop_counter = 0  
                 if (i+1) % 10 == 0:
                     if args.finetune:
                         # print('Epoch:{},acc_train:{:.2f},acc_train_attach:{:.2f},cos_loss:{:.4f},fixed_loss:{:.4f},fine-tuning percentage:{:.4f}'.format(i+1,acc_train,acc_train_attach,loss_homo,regularization_loss,percentage))
@@ -1126,7 +1050,7 @@ class UIAP(torch.nn.Module):
         args = self.args
         device =self.device
         
-        ##### 有毒图数据 #####
+        
         if self.args.fit_attach_num<=len(idx_attach):
             idx_attach = idx_attach[:self.args.fit_attach_num]
         else:
@@ -1157,9 +1081,7 @@ class UIAP(torch.nn.Module):
         origin_poison_edge_weights = poison_edge_weights
         origin_poison_labels = poison_labels
         origin_idx_attach = idx_attach
-        ##### 有毒图数据 #####
         
-        ##### 载入fit数据 #####
         poison_x_list = []
         poison_edge_list = []
         poison_weights_list = []
@@ -1180,15 +1102,12 @@ class UIAP(torch.nn.Module):
         #     pass
         # else:  
         #     torch.save(fit_weight,file_path)
-        ##### 载入fit数据 #####
         
-            
-        ##### 设置随机数种子 #####
         rs = np.random.RandomState(args.seed)
         seeds = rs.randint(1000,size=10)
         seeds = list(seeds)
         seeds.insert(0, args.seed) 
-        ##### 设置随机数种子 #####
+        
         
         
         models = ['GCN'] #'GCN','GAT', 'GraphSage'
@@ -1223,15 +1142,15 @@ class UIAP(torch.nn.Module):
                 else:
                     new_idx_attach = idx_attach
                     
-                # 测试
+                
                 for test_model in models:
                     args.test_model = test_model
                     asr = 0
-                    # 模型选择
+                    
                     
                     
                     # test_model = model_construct(args,args.test_model,data,device).to(device)
-                    # fit 攻击模型
+                    
                     test_model = ProGGCN(input_dim=self.features.shape[1], out_dim=args.hidden, num_layer=3)
                     test_model.load_state_dict(torch.load('./pre_trained_gnn/Cora.Edgepred_GPPT.GCN.128hidden_dim.pth', map_location=device))
                     test_model.to(device)
@@ -1376,7 +1295,7 @@ class UIAP(torch.nn.Module):
         args = self.args
         device =self.device
         
-        ##### 有毒图数据 #####
+        
         if self.args.fit_attach_num<=len(idx_attach):
             idx_attach = idx_attach[:self.args.fit_attach_num]
         else:
@@ -1401,9 +1320,7 @@ class UIAP(torch.nn.Module):
         origin_poison_edge_weights = poison_edge_weights
         origin_poison_labels = poison_labels
         origin_idx_attach = idx_attach
-        ##### 有毒图数据 #####
         
-        ##### 载入fit数据 #####
         poison_x_list = []
         poison_edge_list = []
         poison_weights_list = []
@@ -1424,15 +1341,12 @@ class UIAP(torch.nn.Module):
             pass
         else:  
             torch.save(fit_weight,file_path)
-        ##### 载入fit数据 #####
-        
-            
-        ##### 设置随机数种子 #####
+      
         rs = np.random.RandomState(args.seed)
         seeds = rs.randint(1000,size=3)
         seeds = list(seeds)
         seeds.insert(0, args.seed) 
-        ##### 设置随机数种子 #####
+        
         
         
         models = ['GCN','GAT', 'GraphSage']
@@ -1467,14 +1381,14 @@ class UIAP(torch.nn.Module):
                 else:
                     new_idx_attach = idx_attach
                     
-                # 测试
+                
                 for test_model in models:
                     args.test_model = test_model
                     asr = 0
-                    # 模型选择
+                
                     test_model = model_construct(args,args.test_model,data,device).to(device)
                     
-                    # fit 攻击模型
+                    
                     test_model.new_fit(poison_x_list, poison_edge_list, poison_weights_list, poison_labels_list, [idx_train,new_idx_attach], idx_eval, None,train_iters=300, verbose=False)
                     
                         
@@ -1568,7 +1482,7 @@ class UIAP(torch.nn.Module):
         args = self.args
         device =self.device
         
-        ##### 有毒图数据 #####
+        
         if self.args.fit_attach_num<=len(idx_attach):
             idx_attach = idx_attach[:self.args.fit_attach_num]
         else:
@@ -1599,9 +1513,7 @@ class UIAP(torch.nn.Module):
         origin_poison_edge_weights = poison_edge_weights
         origin_poison_labels = poison_labels
         origin_idx_attach = idx_attach
-        ##### 有毒图数据 #####
-        
-        ##### 载入fit数据 #####
+       
         poison_x_list = []
         poison_edge_list = []
         poison_weights_list = []
@@ -1622,15 +1534,12 @@ class UIAP(torch.nn.Module):
         #     pass
         # else:  
         #     torch.save(fit_weight,file_path)
-        ##### 载入fit数据 #####
         
-            
-        ##### 设置随机数种子 #####
         rs = np.random.RandomState(args.seed)
         seeds = rs.randint(1000,size=3) #10
         seeds = list(seeds)
         seeds.insert(0, args.seed) 
-        ##### 设置随机数种子 #####
+        
         
         encoder = Encoder(self.features.shape[1], self.args.gcl_hidden ,k=2).to(device)
         clean_model = GRACE(encoder = encoder,
@@ -1699,15 +1608,15 @@ class UIAP(torch.nn.Module):
                 else:
                     new_idx_attach = idx_attach
                     
-                # 测试
+                
                 for test_model in models:
                     args.test_model = test_model
                     asr = 0
-                    # 模型选择
+                
                     
                    
                     # test_model = model_construct(args,args.test_model,data,device).to(device)
-                    # fit 攻击模型
+                    
                     import copy
                     test_model = copy.deepcopy(clean_model)
                     # TODO
@@ -1811,13 +1720,13 @@ class UIAP(torch.nn.Module):
     def new_test(self,idx_train,idx_eval,idx_atk,data,labels,idx_clean_test,mask_edge_index):
         loss_labels = calculate_weights(idx_train,labels)
         loss_labels = torch.tensor(loss_labels).to(self.device)
-        # TODO 三合一测试/先保存poison与测试子图，再进行测试
+        
         import os 
         import csv
         args = self.args
         device =self.device
         
-        # 载入分割前的有毒图数据
+        
         # file_path = './test/{}/origin-{}-{}-{}.pth'.format(args.dataset,args.num_prompts,args.test_thr,args.fit_attach_num)
         file_path = './test/{}/origin-{}-{}-{}-{}-ood.pth'.format(args.dataset,args.num_prompts,args.test_thr,args.fit_attach_num,args.trojan_epochs)
         data_dict = torch.load(file_path) 
@@ -1833,7 +1742,7 @@ class UIAP(torch.nn.Module):
         origin_poison_labels = poison_labels
         origin_idx_attach = idx_attach
         
-        # 载入fit数据
+        
         # file_path = './test/{}/fit-{}-{}-{}.pth'.format(args.dataset,args.num_prompts,args.test_thr,args.fit_attach_num)
         file_path = './test/{}/fit-{}-{}-{}-{}-ood.pth'.format(args.dataset,args.num_prompts,args.test_thr,args.fit_attach_num,args.trojan_epochs)
         dataFit_dict = torch.load(file_path) 
@@ -1842,7 +1751,7 @@ class UIAP(torch.nn.Module):
         poison_weights_list = dataFit_dict['poison_weights_list'] 
         poison_labels_list = dataFit_dict['poison_labels_list'] 
         
-        # 设置随机数种子
+        
         rs = np.random.RandomState(args.seed)
         seeds = rs.randint(1000,size=1)
         seeds = list(seeds)
@@ -1852,7 +1761,7 @@ class UIAP(torch.nn.Module):
         # defense_modes = []
         defense_modes = ["reconstruct" ]
         
-        # 测试每一个种子下的 每一种防御策略
+        
         
         for seed in seeds:
             
@@ -1862,7 +1771,7 @@ class UIAP(torch.nn.Module):
             torch.cuda.manual_seed(args.seed)
 
             for defense_mode in defense_modes:
-                # 根据防御策略进行原图剪枝、更新attach
+                
                 args.defense_mode = defense_mode
                 
                 idx_attach = origin_idx_attach
@@ -1884,15 +1793,15 @@ class UIAP(torch.nn.Module):
                 else:
                     new_idx_attach = idx_attach
                     
-                # 测试
+                
                 for test_model in models:
                     args.test_model = test_model
                     asr = 0
                 
-                    # 模型选择
+                    
                     test_model = model_construct(args,args.test_model,data,device).to(device)
                     
-                    # fit 攻击模型
+                    
                     test_model.new_fit(poison_x_list, poison_edge_list, poison_weights_list, poison_labels_list, [idx_train,new_idx_attach], idx_eval, None,train_iters=300, verbose=False)
                     
                         
@@ -1904,9 +1813,9 @@ class UIAP(torch.nn.Module):
                     print("accuracy on clean test nodes: {:.4f}".format(clean_acc), flush=True)
                     
                     
-                    # 测试n个类的子图
+                    
                     for index in range(labels.max().item()+1):
-                        # 载入所有idx_atk 的 1个类的子图进行测试
+                        
                         # file_path ='./test/{}/label{}-{}-{}-{}.pth'.format(args.dataset,index,args.num_prompts,args.test_thr,args.fit_attach_num)
                         file_path ='./test/{}/label{}-{}-{}-{}-{}.pth'.format(args.dataset,index,args.num_prompts,args.test_thr,args.fit_attach_num,args.trojan_epochs)
                         # print(file_path)
@@ -1918,44 +1827,25 @@ class UIAP(torch.nn.Module):
                         target_class_list = dataFit_dict['target_class_list'] 
                         relabeled_node_idx_list = dataFit_dict['relabeled_node_idx_list'] 
                         # record_features_list = []
-                        # 每个atk子图进行测试
+                       
                         for induct_x,induct_edge_index,induct_edge_weights,trojan_edge_index,target_class,relabeled_node_idx in zip(induct_x_list,induct_edge_index_list,induct_edge_weights_list,trojan_edge_index_list,target_class_list,relabeled_node_idx_list):
                            
                             induct_x, induct_edge_index,induct_edge_weights = induct_x.clone().detach(), induct_edge_index.clone().detach(),induct_edge_weights.clone().detach()
                         
-                            # 防御
+                            #
                             if(args.defense_mode == 'prune' or args.defense_mode == 'isolate'):
                                 origin_edge_index = induct_edge_index
                                 induct_edge_index,induct_edge_weights = prune_unrelated_edge(args,induct_edge_index,induct_edge_weights,induct_x,device)
                                 normal_edges_count,special_edges_count = count_removed_edges(origin_edge_index, induct_edge_index, trojan_edge_index)
-                                # count_removed_edges(origin_edge_index, induct_edge_index, trojan_edge_index, origin_edge_index)
-                                # normal_edges_count,special_edges_count = count_edges(old_edge_index,induct_edge_index,total_nodes)
-                                # total_special_edges_count += special_edges_count
-                                # total_normal_edges_count += normal_edges_count
+                              
                                 
-                            # 测试
+                            
                             output = test_model(induct_x,induct_edge_index,induct_edge_weights)
-                            # record_features = test_model.get_h(induct_x,induct_edge_index,induct_edge_weights)
-                            # record_features_list.append(record_features)
+                           
                             train_attach_rate = (output.argmax(dim=1)[relabeled_node_idx]==target_class).float().mean()
                             asr+=train_attach_rate
 
-                        # induct_x_list = dataFit_dict['induct_x_list']  
-                        # induct_edge_index_list = dataFit_dict['induct_edge_index_list']  
-                        # induct_edge_weights_list = dataFit_dict['induct_edge_weights_list'] 
-                        # trojan_edge_index_list = dataFit_dict['trojan_edge_index_list'] 
-                        # target_class_list = dataFit_dict['target_class_list'] 
-                        # relabeled_node_idx_list = dataFit_dict['relabeled_node_idx_list'] 
-                        # sub_data = {
-                        #         'induct_x_list':induct_x_list,
-                        #         'induct_edge_index_list':induct_edge_index_list,  
-                        #         'induct_edge_weights_list':induct_edge_weights_list, 
-                        #         'trojan_edge_index_list':trojan_edge_index_list,
-                        #         'target_class_list':target_class_list,
-                        #         'relabeled_node_idx_list':relabeled_node_idx_list,
-                        #         'record_features_list':record_features_list,
-                        # }
-                        # torch.save(sub_data,file_path)
+                       
                     
                     
                     asr = asr/(labels.max().item()+1)/len(idx_atk)
