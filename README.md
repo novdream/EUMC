@@ -4,16 +4,17 @@
 
 ## Introduction
 
-GPL4TGBA is an innovative framework designed to address the critical issue of crafting transferable graph backdoor attacks across diverse learning paradigms. This framework enhances the adaptability of graph backdoor attacks, ensuring they remain effective across various graph learning models.
+EUMC is an innovative framework designed to address the critical issue of crafting effective and unnoticeable multi-category graph backdoor attacks. 
  
 
 **Components**
-- **Condensed Subgraph Triggers:** Constructs a set of diverse triggers that maintain the intrinsic structural properties of the data.
-- **Graph Prompt Learning for Trigger Training:** Employs GPL to train triggers, leveraging its theoretical transferability properties, to ensure the triggers are effective across different learning paradigms.
+- **Multi-Category Subgraph Triggers Pool:** Constructs a set of diverse triggers that maintain the intrinsic structural properties of the data and are aware of different categories.
+- **Trigger Attachment Strategy:** Develops a "select then attach" strategy that connects suitable category-aware triggers to attacked nodes for unnoticeability.
+
 
 **Contributions:**
--  **Problem Exploration:** We study a novel backdoor attack problem aimed at generalizing attacks across different graph learning paradigms.
--  **Method Development:** Based on recent research on GPL, we explore using GPL to train backdoor triggers and verify its effectiveness in generalizing triggers across various learning paradigms.
+-  **Problem Exploration:** We focus on the challenging problem of effective and unnoticeable multi-category graph backdoor attack
+-  **Method Development:** We design a novel framework that constructs a multi-category subgraph trigger pattern (MC-STP) from the attacked graph. We also develop a “select then attach” strategy to ensure the unnoticeability and effectiveness of the multi-category graph backdoor attacks.
 
 ## Overview
 
