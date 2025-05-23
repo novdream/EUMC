@@ -19,7 +19,7 @@ EUMC is an innovative framework designed to address the critical issue of crafti
 ## Overview
 
 *  `utils.py`: The functions to select nodes, load and split data.
-*  `emuc.py`: This file contains the model of EUMC.
+*  `eumc.py`: This file contains the model of EUMC.
 *  `construct.py`: This file contains target model info.
 *  `surrogate_models`: The framework of baseline backdoor attack.
 *  `train.py`: The program to run our EUMC attack.
