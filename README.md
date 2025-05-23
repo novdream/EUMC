@@ -60,7 +60,7 @@ To train EUMC , run this command:
 python train.py
 ```
 
-You can set the dataset parameter in  train.py to achieve the evaluation of specific datasets. The specific parameters are elaborated in detail in the paper.
+You can set the dataset parameter in  `train.py` to achieve the evaluation of specific datasets. The specific parameters are elaborated in detail in the paper.
 
 ## Evaluation
 
@@ -69,7 +69,7 @@ To evaluate our model on target dataset, run:
 ```eval
 python train.py --dataset Cora --eval
 ```
-You can set the dataset and eval parameters in train.py to achieve the evaluation of specific datasets.
+You can set the dataset and eval parameters in `train.py` to achieve the evaluation of specific datasets.
 
 ## Results
 
