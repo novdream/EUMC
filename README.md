@@ -10,9 +10,7 @@
 ## Introduction
 
 EUMC is an innovative framework designed to address the complex challenge of conducting effective and unnoticeable multi-category graph backdoor attacks on node classification. 
-
-![main](EUMC\images\main.png)
-
+<img src="images/main.png" alt="Image 1" style="width: 100%;"/>
 
 
 
