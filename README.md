@@ -65,6 +65,16 @@ python train.py --dataset Cora --eval
 You can set the dataset and eval parameters in `train.py` to achieve the evaluation of specific datasets.
 
 
+## Reference
+If you find our code useful for your research, please consider citing our paper.
+```
+@article{cui2024or,
+  title={OR-Bench: An Over-Refusal Benchmark for Large Language Models},
+  author={Cui, Justin and Chiang, Wei-Lin and Stoica, Ion and Hsieh, Cho-Jui},
+  journal={arXiv preprint arXiv:2405.20947},
+  year={2024}
+}
+```
 
 
 
