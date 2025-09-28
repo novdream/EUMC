@@ -13,13 +13,13 @@ EUMC is an innovative framework designed to address the complex challenge of con
 *  `eumc.py`: This file contains the model of EUMC.
 *  `construct.py`: This file contains target model info.
 *  `surrogate_models`: The framework of baseline backdoor attack.
+*  `clustering_nodes`: The algorithm of clustering nodes.
 *  `train.py`: The program to run our EUMC attack.
 
 ## Get Started
 First, download our repo
 ```
-git clone https://github.com/justincui03/or-bench
-cd or-bench
+git clone https://github.com/novdream/EUMC
 ```
 Next, install the required environment
 ```setup
