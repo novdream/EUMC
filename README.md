@@ -1,9 +1,18 @@
 # Attack by Yourself: Effective and Unnoticeable Multi-Category Graph Backdoor Attacks with Subgraph Triggers Pool
 
 
+<table style="width:20%; border-collapse: collapse;">
+  <tr>
+    <th style="border: 1px solid black;text-align:center;"><a href="https://arxiv.org/abs/2412.17213">Paper</a></th>
+  </tr>
+</table>
 ## Introduction
 
-EUMC is an innovative framework designed to address the complex challenge of conducting effective and unnoticeable multi-category graph backdoor attacks on node classification.
+EUMC is an innovative framework designed to address the complex challenge of conducting effective and unnoticeable multi-category graph backdoor attacks on node classification. 
+
+![image-20250928121237169](C:\Users\ldy\AppData\Roaming\Typora\typora-user-images\image-20250928121237169.png)
+
+
 
 
 ## Project Structure
@@ -58,10 +67,13 @@ You can set the dataset parameter in  `train.sh` to achieve the evaluation of sp
 ## Reference
 If you find our code useful for your research, please consider citing our paper.
 ```
-@article{cui2024or,
-  title={OR-Bench: An Over-Refusal Benchmark for Large Language Models},
-  author={Cui, Justin and Chiang, Wei-Lin and Stoica, Ion and Hsieh, Cho-Jui},
-  journal={arXiv preprint arXiv:2405.20947},
-  year={2024}
+@misc{li2024attackyourselfeffectiveunnoticeable,
+      title={Attack by Yourself: Effective and Unnoticeable Multi-Category Graph Backdoor Attacks with Subgraph Triggers Pool}, 
+      author={Jiangtong Li and Dongyi Liu and Dawei Cheng and Changchun Jiang},
+      year={2024},
+      eprint={2412.17213},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2412.17213}, 
 }
 ```

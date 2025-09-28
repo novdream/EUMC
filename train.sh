@@ -1,3 +1,4 @@
+PYTHON_SCRIPT_PATH="EUMC/train.py"
 dataset="Cora"
 prompt_sizes=5
 num_prompt=300
