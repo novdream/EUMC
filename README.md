@@ -7,7 +7,7 @@
 EUMC is an innovative framework designed to address the complex challenge of conducting effective and unnoticeable multi-category graph backdoor attacks on node classification.
  
 
-## Overview
+## Project Structure
 
 *  `utils.py`: The functions to select nodes, load and split data.
 *  `eumc.py`: This file contains the model of EUMC.
