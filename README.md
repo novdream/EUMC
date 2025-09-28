@@ -1,11 +1,10 @@
-
 # Attack by Yourself: Effective and Unnoticeable Multi-Category Graph Backdoor Attacks with Subgraph Triggers Pool
 
 
 ## Introduction
 
 EUMC is an innovative framework designed to address the complex challenge of conducting effective and unnoticeable multi-category graph backdoor attacks on node classification.
- 
+
 
 ## Project Structure
 
@@ -45,24 +44,15 @@ pip install pandas torchmetrics Deprecated
 ## Data
 The experiments are conducted on six public real-world datasets, i.e., Cora, Pubmed, Facebook, Bitcoin, Flickr, and OGB-arxiv which can be automatically downloaded to `./data` through torch-geometric API.
 
-## Training
+## Training and Test
 
 To train EUMC , run this command:
 
 ```train
-python train.py
+bash train.sh
 ```
 
-You can set the dataset parameter in  `train.py` to achieve the evaluation of specific datasets. The specific parameters are elaborated in detail in the paper.
-
-## Evaluation
-
-To evaluate our model on target dataset, run:
-
-```eval
-python train.py --dataset Cora --eval
-```
-You can set the dataset and eval parameters in `train.py` to achieve the evaluation of specific datasets.
+You can set the dataset parameter in  `train.sh` to achieve the evaluation of specific datasets. The specific parameters are elaborated in detail in the paper.
 
 
 ## Reference
@@ -75,12 +65,3 @@ If you find our code useful for your research, please consider citing our paper.
   year={2024}
 }
 ```
-
-
-
-
-
-
-
-
-
