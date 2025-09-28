@@ -10,7 +10,7 @@
 
 EUMC is an innovative framework designed to address the complex challenge of conducting effective and unnoticeable multi-category graph backdoor attacks on node classification. 
 
-![image-20250928121237169](C:\Users\ldy\AppData\Roaming\Typora\typora-user-images\image-20250928121237169.png)
+![main](D:\desk\EUMC\images\main.png)
 
 
 
