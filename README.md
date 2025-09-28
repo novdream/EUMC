@@ -52,9 +52,9 @@ pip install pandas torchmetrics Deprecated
 ## Data
 The experiments are conducted on six public real-world datasets, i.e., Cora, Pubmed, Facebook, Bitcoin, Flickr, and OGB-arxiv which can be automatically downloaded to `./data` through torch-geometric API.
 
-## Training and Test
+## Training and Testing
 
-To train EUMC , run this command:
+To train and test EUMC , run this command:
 
 ```train
 bash train.sh
