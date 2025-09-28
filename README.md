@@ -26,7 +26,7 @@ EUMC is an innovative framework designed to address the complex challenge of con
 ## Get Started
 First, download our repo
 ```
-git clone https://github.com/novdream/EUMC
+git clone https://github.com/novdream/EUMC.git
 ```
 Next, install the required environment
 ```setup
