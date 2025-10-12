@@ -1,8 +1,8 @@
 PYTHON_SCRIPT_PATH="EUMC/train.py"
 dataset="Cora"
-prompt_sizes=5
+prompt_size=5
 num_prompt=300
-homo_boost_thrd=0.5
+homo_boost_thrd=0.4
 hidden=64
 id=0
 trojan_epochs=600
@@ -10,17 +10,17 @@ val_feq=50
 evaluate_mode=1by1
 selection_method=cluster_degree
 defense_mode="none"
-homo_loss_weight=10.0
+homo_loss_weight=5.0
 norm_weight=0.0001
 dis_weight=0.0
 layer=2
 seed=106
-train_lr=0.005
+train_lr=0.001
 new="Y"
 index=0
 num_attach=100
 fit_attach_num=100
-test_thr=0.1
+test_thr=0.2
 prune_thr=0.1
 
 
