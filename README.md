@@ -6,12 +6,11 @@
     <th style="border: 1px solid black;text-align:center;"><a href="https://arxiv.org/abs/2412.17213">Paper</a></th>
   </tr>
 </table>
+
 ## Introduction
 
 EUMC is an innovative framework designed to address the complex challenge of conducting effective and unnoticeable multi-category graph backdoor attacks on node classification. 
-
-![main](D:\desk\EUMC\images\main.png)
-
+<img src="images/main.png" alt="Image 1" style="width: 100%;"/>
 
 
 
@@ -27,7 +26,7 @@ EUMC is an innovative framework designed to address the complex challenge of con
 ## Get Started
 First, download our repo
 ```
-git clone https://github.com/novdream/EUMC
+git clone https://github.com/novdream/EUMC.git
 ```
 Next, install the required environment
 ```setup
@@ -53,9 +52,9 @@ pip install pandas torchmetrics Deprecated
 ## Data
 The experiments are conducted on six public real-world datasets, i.e., Cora, Pubmed, Facebook, Bitcoin, Flickr, and OGB-arxiv which can be automatically downloaded to `./data` through torch-geometric API.
 
-## Training and Test
+## Training and Testing
 
-To train EUMC , run this command:
+To train and test EUMC , run this command:
 
 ```train
 bash train.sh
