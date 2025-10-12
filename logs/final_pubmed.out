@@ -1,0 +1,493 @@
+Running model with prompt_size=5, num_prompts=150
+=== training gcn model ===
+Epoch 0, training loss: 1.0965605974197388
+acc_val: 0.4039
+Epoch 10, training loss: 0.8460285663604736
+acc_val: 0.6611
+Epoch 20, training loss: 0.41716137528419495
+acc_val: 0.8427
+Epoch 30, training loss: 0.32260647416114807
+acc_val: 0.8498
+Epoch 40, training loss: 0.27923405170440674
+acc_val: 0.8600
+Epoch 50, training loss: 0.23897157609462738
+acc_val: 0.8610
+Epoch 60, training loss: 0.2033815234899521
+acc_val: 0.8620
+Epoch 70, training loss: 0.19583019614219666
+acc_val: 0.8590
+Epoch 80, training loss: 0.1750253289937973
+acc_val: 0.8625
+Epoch 90, training loss: 0.1629672348499298
+acc_val: 0.8625
+Epoch 100, training loss: 0.15803484618663788
+acc_val: 0.8656
+Epoch 110, training loss: 0.1434701532125473
+acc_val: 0.8605
+Epoch 120, training loss: 0.1404140144586563
+acc_val: 0.8630
+Epoch 130, training loss: 0.13250987231731415
+acc_val: 0.8590
+Epoch 140, training loss: 0.1305580735206604
+acc_val: 0.8595
+Epoch 150, training loss: 0.12865175306797028
+acc_val: 0.8615
+Epoch 160, training loss: 0.1238919347524643
+acc_val: 0.8610
+Epoch 170, training loss: 0.12968605756759644
+acc_val: 0.8564
+Epoch 180, training loss: 0.1267697960138321
+acc_val: 0.8630
+Epoch 190, training loss: 0.11483865976333618
+acc_val: 0.8635
+=== picking the best model according to the performance on validation ===
+Training encoder Finished!
+Encoder CA on clean test nodes: 0.8579
+idx_sing_class [    2    15    34 ... 19711 19713 19715]
+y_pred [1 1 1 ... 1 1 0]
+node_idxs [    2  8197  8200 ...  8179 16375 16379]
+selected_nodes [14479 12920 19134 ... 10163 16403   454] [14479 12920 19134 ... 10163 16403   454]
+idx_sing_class [    0     1     4 ... 19700 19702 19704]
+y_pred [0 1 0 ... 1 0 0]
+node_idxs [16384     1 16385 ...  8186  8189  8191]
+selected_nodes [10886  1370  8747 ... 17596  4058 18770] [10886  1370  8747 ... 17596  4058 18770]
+idx_sing_class [    3     5     6 ... 19712 19714 19716]
+y_pred [0 0 0 ... 0 1 1]
+node_idxs [16386     3  8195 ... 16376  8187  8190]
+selected_nodes [ 7176  9970  2755 ... 18724  6720  1205] [ 7176  9970  2755 ... 18724  6720  1205]
+Namespace(cuda=False, dataset='Pubmed', debug=True, defense_mode='none', device_id=0, dis_weight=0.0, dropout=0.5, epochs=200, evaluate_mode='1by1', exp=8, finetune=True, fit_attach_num=150, hidden=64, homo_boost_thrd=0.4, homo_loss_weight=5.0, index=0, inner=1, layer=2, max_subgraph=3, mode=False, model='GCN', moreFit=False, new='Y', no_cuda=True, norm_weight=0.0001, num_attach=150, num_prompts=150, position=True, prompt_size=5, prune_thr=0.1, seed=106, selection_method='cluster_degree', target_class=0, test_thr=0.2, thrd=0.5, train=True, train_lr=0.005, trojan_epochs=1000, val_feq=100, weight_decay=0.0005)
+tensor([14479, 12920, 19134,  6449,   449, 13820, 15179, 14130,  9229,  5212,
+        18582, 11217,  9892,  3427, 14483,  2205,  8138,  2013,  7395,  3011,
+         8652,  3122, 14775,  5523, 14632, 10007,  6291, 14586, 14390, 16242,
+         4497,  5868,  9960,  9353, 17138, 17798, 11075,  1459, 15178, 18280,
+        14437,  1886, 14111,  6653,  4088, 12670, 13438, 17756,   618,  9459,
+         3291, 14270,  2209, 18533,  6887,  5599,  2420, 12650, 14673,  9052,
+        16722, 19217, 10555,  2067,  5866,  6326,  4063, 16912,  7930,  2557,
+         7610,  6070,  4651, 18683,  8282, 10886,  1370,  8747, 14997,   698,
+         1857,  5941,  8574, 14445, 14263, 18891, 12977, 11651,  4970, 15289,
+         7621, 14770, 15330, 16412, 17487, 11496, 11534,  1532, 14320,  4828,
+         5531, 10842,  1947, 10027, 12824, 11956,  4591, 16833,   105, 17955,
+         9888,  4187,  5230, 14435,  8147, 11527, 13292,   650,   373,   439,
+        13684,  8392,  7380, 16708, 18162,  9739,  6132, 19209,  1102,  8488,
+         4902,   958,  2705,    65,   478, 19180, 10220,   280, 11479, 10528,
+         3251, 16866,   184,  3445,  6576,  2058,  8710, 12768,  4238,  9585,
+         7176,  9970,  2755, 17110,  4150,  7266,  7007, 19443,  9474, 14421,
+        18546, 12857,  1076, 10338,  2982,  3712, 15799,  1828,  9431,  1476,
+        11499,  2870, 18874,  8800,  7857,  3123, 11251, 17608,  8971,  8686,
+         1504, 10732, 10907, 19328,  1725,  6599,  8323,  5345, 17052, 17457,
+        19561, 10731, 13359,  5372, 16357,  3489, 11531,  2256,  9935, 17599,
+          195, 10196, 18173, 13828,  9991, 19354, 10912,  1199,  2440, 13640,
+        14904,  2573,   779, 17236,  6185,  3672, 10396, 15402,  4839,  7463,
+         6779, 15320, 12593, 13829, 13906], device='cuda:0')
+tensor([    1,     2,     3,  ..., 19712, 19714, 19716], device='cuda:0')
+tensor([0.8000, 0.6000, 0.6000], device='cuda:0')
+=== training encoder model ===
+=== training gcn model ===
+Epoch 0, training loss: 1.08589506149292
+acc_val: 0.4039
+Epoch 10, training loss: 0.8139967322349548
+acc_val: 0.7478
+Epoch 20, training loss: 0.3998498320579529
+acc_val: 0.8468
+Epoch 30, training loss: 0.3119226396083832
+acc_val: 0.8574
+Epoch 40, training loss: 0.2679552435874939
+acc_val: 0.8645
+Epoch 50, training loss: 0.2341046929359436
+acc_val: 0.8615
+Epoch 60, training loss: 0.20434224605560303
+acc_val: 0.8645
+Epoch 70, training loss: 0.18379166722297668
+acc_val: 0.8676
+Epoch 80, training loss: 0.16610310971736908
+acc_val: 0.8661
+Epoch 90, training loss: 0.17654453217983246
+acc_val: 0.8671
+Epoch 100, training loss: 0.1582745611667633
+acc_val: 0.8620
+Epoch 110, training loss: 0.13752904534339905
+acc_val: 0.8635
+Epoch 120, training loss: 0.13743440806865692
+acc_val: 0.8635
+Epoch 130, training loss: 0.13641822338104248
+acc_val: 0.8635
+Epoch 140, training loss: 0.1276608258485794
+acc_val: 0.8640
+Epoch 150, training loss: 0.1241208016872406
+acc_val: 0.8656
+Epoch 160, training loss: 0.13016347587108612
+acc_val: 0.8661
+Epoch 170, training loss: 0.12000403553247452
+acc_val: 0.8610
+Epoch 180, training loss: 0.1276712715625763
+acc_val: 0.8600
+Epoch 190, training loss: 0.12460038810968399
+acc_val: 0.8625
+=== picking the best model according to the performance on validation ===
+=== end  ===
+== loading subgraphs ==
+== end ==
+=== Clustering Subgraphs ===
+=== end ===
+=== Selecting Center Subgraphs ===
+=== end ===
+===label pool begin==
+===label pool over==
+mode:F,acc:0.3623,loss:1.0523
+mode:R,acc:0.3487,loss:1.0585
+mode:F,acc:0.5739,loss:0.9787
+mode:R,acc:0.5590,loss:0.9807
+mode:F,acc:0.7001,loss:0.9220
+mode:R,acc:0.8399,loss:0.8943
+mode:F,acc:0.9837,loss:0.7985
+mode:R,acc:0.9539,loss:0.7987
+mode:F,acc:0.7856,loss:0.8059
+mode:R,acc:0.9579,loss:0.7283
+mode:F,acc:0.9281,loss:0.6809
+mode:R,acc:0.9634,loss:0.6881
+mode:F,acc:0.9254,loss:0.6191
+mode:R,acc:0.9512,loss:0.6396
+mode:F,acc:0.9525,loss:0.5797
+mode:R,acc:0.9607,loss:0.5653
+mode:F,acc:0.9389,loss:0.5250
+mode:R,acc:0.9498,loss:0.5261
+mode:F,acc:0.9498,loss:0.4908
+mode:R,acc:0.9593,loss:0.4874
+mode:F,acc:0.9634,loss:0.4396
+mode:R,acc:0.9661,loss:0.4448
+mode:F,acc:0.9674,loss:0.4177
+mode:R,acc:0.9593,loss:0.4287
+mode:F,acc:0.9742,loss:0.3956
+mode:R,acc:0.9661,loss:0.4018
+mode:F,acc:0.9715,loss:0.3797
+mode:R,acc:0.9742,loss:0.3863
+mode:F,acc:0.9701,loss:0.3696
+mode:R,acc:0.9647,loss:0.3797
+mode:F,acc:0.9729,loss:0.3656
+mode:R,acc:0.9742,loss:0.3688
+mode:F,acc:0.9647,loss:0.3594
+mode:R,acc:0.9647,loss:0.3642
+mode:F,acc:0.9349,loss:0.3555
+mode:R,acc:0.9824,loss:0.3489
+mode:F,acc:0.9729,loss:0.3430
+mode:R,acc:0.9607,loss:0.3446
+mode:F,acc:0.9634,loss:0.3403
+mode:R,acc:0.9607,loss:0.3488
+mode:F,acc:0.9389,loss:0.3384
+mode:R,acc:0.9607,loss:0.3406
+mode:F,acc:0.9769,loss:0.3311
+mode:R,acc:0.9444,loss:0.3528
+mode:F,acc:0.9403,loss:0.3347
+mode:R,acc:0.9444,loss:0.3350
+mode:F,acc:0.9620,loss:0.3216
+mode:R,acc:0.9701,loss:0.3264
+mode:F,acc:0.9769,loss:0.3194
+mode:R,acc:0.9593,loss:0.3232
+mode:F,acc:0.8548,loss:0.4372
+mode:R,acc:0.9349,loss:0.3400
+mode:F,acc:0.9810,loss:0.3146
+mode:R,acc:0.9647,loss:0.3217
+mode:F,acc:0.9769,loss:0.3306
+mode:R,acc:0.9322,loss:0.3562
+mode:F,acc:0.9566,loss:0.3628
+mode:R,acc:0.9620,loss:0.3589
+mode:F,acc:0.9891,loss:0.3296
+mode:R,acc:0.9607,loss:0.3395
+mode:F,acc:0.9756,loss:0.3185
+mode:R,acc:0.9620,loss:0.3340
+mode:F,acc:0.9620,loss:0.3194
+mode:R,acc:0.9349,loss:0.3289
+mode:F,acc:0.9824,loss:0.3016
+mode:R,acc:0.9498,loss:0.3069
+mode:F,acc:0.9783,loss:0.2987
+mode:R,acc:0.9579,loss:0.3116
+mode:F,acc:0.9878,loss:0.2943
+mode:R,acc:0.9593,loss:0.3046
+mode:F,acc:0.9729,loss:0.2988
+mode:R,acc:0.9417,loss:0.3146
+mode:F,acc:0.9729,loss:0.2947
+mode:R,acc:0.9607,loss:0.2992
+mode:F,acc:0.9810,loss:0.2998
+mode:R,acc:0.9620,loss:0.3060
+mode:F,acc:0.9634,loss:0.3059
+mode:R,acc:0.9634,loss:0.3016
+mode:F,acc:0.9851,loss:0.2930
+mode:R,acc:0.9566,loss:0.3071
+mode:F,acc:0.9810,loss:0.3015
+mode:R,acc:0.9566,loss:0.3061
+mode:F,acc:0.9864,loss:0.2938
+mode:R,acc:0.9566,loss:0.2978
+mode:F,acc:0.9796,loss:0.2895
+mode:R,acc:0.9607,loss:0.2910
+mode:F,acc:0.9729,loss:0.2873
+mode:R,acc:0.9688,loss:0.2911
+mode:F,acc:0.9552,loss:0.2981
+mode:R,acc:0.9674,loss:0.2920
+mode:F,acc:0.9851,loss:0.3019
+mode:R,acc:0.9701,loss:0.2861
+mode:F,acc:0.9796,loss:0.2991
+mode:R,acc:0.9539,loss:0.2949
+mode:F,acc:0.9796,loss:0.2965
+mode:R,acc:0.9674,loss:0.2977
+mode:F,acc:0.9864,loss:0.3091
+mode:R,acc:0.9525,loss:0.3174
+mode:F,acc:0.9674,loss:0.2968
+mode:R,acc:0.9308,loss:0.3042
+mode:F,acc:0.9688,loss:0.3019
+mode:R,acc:0.9471,loss:0.2980
+mode:F,acc:0.9444,loss:0.4396
+mode:R,acc:0.9457,loss:0.4013
+mode:F,acc:0.9796,loss:0.4242
+mode:R,acc:0.9796,loss:0.4236
+mode:F,acc:0.9539,loss:0.3973
+mode:R,acc:0.9634,loss:0.3576
+mode:F,acc:0.9674,loss:0.3585
+mode:R,acc:0.9498,loss:0.3864
+mode:F,acc:0.9579,loss:0.3756
+mode:R,acc:0.9634,loss:0.3277
+mode:F,acc:0.9362,loss:0.4064
+mode:R,acc:0.9525,loss:0.3842
+mode:F,acc:0.8548,loss:0.4521
+mode:R,acc:0.9186,loss:0.4066
+mode:F,acc:0.9769,loss:0.3746
+mode:R,acc:0.9362,loss:0.4158
+mode:F,acc:0.8467,loss:0.3913
+mode:R,acc:0.9647,loss:0.3691
+mode:F,acc:0.9607,loss:0.3122
+mode:R,acc:0.9552,loss:0.3483
+mode:F,acc:0.9620,loss:0.3161
+mode:R,acc:0.9566,loss:0.3552
+mode:F,acc:0.9376,loss:0.3171
+mode:R,acc:0.9403,loss:0.3209
+mode:F,acc:0.7802,loss:0.3748
+mode:R,acc:0.9579,loss:0.3070
+mode:F,acc:0.8005,loss:0.3515
+mode:R,acc:0.9552,loss:0.3132
+mode:F,acc:0.8792,loss:0.3879
+mode:R,acc:0.9186,loss:0.3533
+mode:F,acc:0.8697,loss:0.5246
+mode:R,acc:0.9579,loss:0.3179
+mode:F,acc:0.9674,loss:0.3028
+mode:R,acc:0.9783,loss:0.3167
+mode:F,acc:0.9281,loss:0.3183
+mode:R,acc:0.9715,loss:0.3042
+mode:F,acc:0.9688,loss:0.2956
+mode:R,acc:0.9661,loss:0.2995
+mode:F,acc:0.9742,loss:0.2772
+mode:R,acc:0.9539,loss:0.3027
+mode:F,acc:0.9552,loss:0.2793
+mode:R,acc:0.9579,loss:0.2851
+mode:F,acc:0.9512,loss:0.2882
+mode:R,acc:0.9552,loss:0.2930
+mode:F,acc:0.9308,loss:0.2977
+mode:R,acc:0.9484,loss:0.2934
+mode:F,acc:0.9607,loss:0.2812
+mode:R,acc:0.9634,loss:0.2730
+mode:F,acc:0.9498,loss:0.2888
+mode:R,acc:0.9593,loss:0.2822
+mode:F,acc:0.9796,loss:0.2769
+mode:R,acc:0.9484,loss:0.2827
+mode:F,acc:0.9796,loss:0.2718
+mode:R,acc:0.9593,loss:0.2737
+mode:F,acc:0.9810,loss:0.2742
+mode:R,acc:0.9674,loss:0.2744
+mode:F,acc:0.8955,loss:0.3388
+mode:R,acc:0.9593,loss:0.2972
+mode:F,acc:0.9742,loss:0.2696
+mode:R,acc:0.9579,loss:0.2789
+mode:F,acc:0.9688,loss:0.2705
+mode:R,acc:0.9607,loss:0.2876
+mode:F,acc:0.9769,loss:0.2768
+mode:R,acc:0.9688,loss:0.2744
+mode:F,acc:0.9824,loss:0.2642
+mode:R,acc:0.9634,loss:0.2714
+mode:F,acc:0.9729,loss:0.2646
+mode:R,acc:0.9512,loss:0.2861
+mode:F,acc:0.9810,loss:0.2759
+mode:R,acc:0.9620,loss:0.2722
+mode:F,acc:0.9769,loss:0.2861
+mode:R,acc:0.9701,loss:0.2780
+mode:F,acc:0.9647,loss:0.2796
+mode:R,acc:0.9715,loss:0.2802
+mode:F,acc:0.9742,loss:0.2709
+mode:R,acc:0.9484,loss:0.2871
+mode:F,acc:0.9620,loss:0.2815
+mode:R,acc:0.9607,loss:0.2747
+mode:F,acc:0.9851,loss:0.2604
+mode:R,acc:0.9539,loss:0.2743
+mode:F,acc:0.9756,loss:0.2615
+mode:R,acc:0.9417,loss:0.2807
+mode:F,acc:0.9796,loss:0.2665
+mode:R,acc:0.9634,loss:0.2713
+mode:F,acc:0.9783,loss:0.2645
+mode:R,acc:0.9552,loss:0.2756
+mode:F,acc:0.9688,loss:0.2644
+mode:R,acc:0.9593,loss:0.2685
+mode:F,acc:0.9783,loss:0.2596
+mode:R,acc:0.9512,loss:0.2800
+mode:F,acc:0.9729,loss:0.2682
+mode:R,acc:0.9484,loss:0.2782
+mode:F,acc:0.9810,loss:0.2623
+mode:R,acc:0.9620,loss:0.2719
+mode:F,acc:0.9403,loss:0.3815
+mode:R,acc:0.9539,loss:0.2780
+mode:F,acc:0.9810,loss:0.2596
+mode:R,acc:0.9607,loss:0.2726
+Best val acc: 0.9647
+accuracy on clean test nodes: 0.8239
+Defense: none,Test_model: GCN,Overall ASR: 0.9704
+accuracy on clean test nodes: 0.8234
+Defense: none,Test_model: GAT,Overall ASR: 0.9539
+accuracy on clean test nodes: 0.8564
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9571
+accuracy on clean test nodes: 0.8290
+Defense: prune,Test_model: GCN,Overall ASR: 0.9555
+accuracy on clean test nodes: 0.8316
+Defense: prune,Test_model: GAT,Overall ASR: 0.9544
+accuracy on clean test nodes: 0.8544
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9496
+accuracy on clean test nodes: 0.8311
+Defense: isolate,Test_model: GCN,Overall ASR: 0.9562
+accuracy on clean test nodes: 0.8300
+Defense: isolate,Test_model: GAT,Overall ASR: 0.9447
+accuracy on clean test nodes: 0.8559
+Defense: isolate,Test_model: GraphSage,Overall ASR: 0.9484
+accuracy on clean test nodes: 0.8295
+Defense: none,Test_model: GCN,Overall ASR: 0.9699
+accuracy on clean test nodes: 0.8300
+Defense: none,Test_model: GAT,Overall ASR: 0.9726
+accuracy on clean test nodes: 0.8559
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9596
+accuracy on clean test nodes: 0.8229
+Defense: prune,Test_model: GCN,Overall ASR: 0.9506
+accuracy on clean test nodes: 0.8290
+Defense: prune,Test_model: GAT,Overall ASR: 0.9642
+accuracy on clean test nodes: 0.8524
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9491
+accuracy on clean test nodes: 0.8295
+Defense: isolate,Test_model: GCN,Overall ASR: 0.9513
+accuracy on clean test nodes: 0.8280
+Defense: isolate,Test_model: GAT,Overall ASR: 0.9638
+accuracy on clean test nodes: 0.8519
+Defense: isolate,Test_model: GraphSage,Overall ASR: 0.9425
+accuracy on clean test nodes: 0.8321
+Defense: none,Test_model: GCN,Overall ASR: 0.9628
+accuracy on clean test nodes: 0.8275
+Defense: none,Test_model: GAT,Overall ASR: 0.9586
+accuracy on clean test nodes: 0.8564
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9611
+accuracy on clean test nodes: 0.8234
+Defense: prune,Test_model: GCN,Overall ASR: 0.9561
+accuracy on clean test nodes: 0.8290
+Defense: prune,Test_model: GAT,Overall ASR: 0.9299
+accuracy on clean test nodes: 0.8564
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9483
+accuracy on clean test nodes: 0.8245
+Defense: isolate,Test_model: GCN,Overall ASR: 0.9604
+accuracy on clean test nodes: 0.8189
+Defense: isolate,Test_model: GAT,Overall ASR: 0.9527
+accuracy on clean test nodes: 0.8569
+Defense: isolate,Test_model: GraphSage,Overall ASR: 0.9466
+accuracy on clean test nodes: 0.8326
+Defense: none,Test_model: GCN,Overall ASR: 0.9637
+accuracy on clean test nodes: 0.8275
+Defense: none,Test_model: GAT,Overall ASR: 0.9180
+accuracy on clean test nodes: 0.8564
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9557
+accuracy on clean test nodes: 0.8280
+Defense: prune,Test_model: GCN,Overall ASR: 0.9567
+accuracy on clean test nodes: 0.8194
+Defense: prune,Test_model: GAT,Overall ASR: 0.9471
+accuracy on clean test nodes: 0.8544
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9483
+accuracy on clean test nodes: 0.8300
+Defense: isolate,Test_model: GCN,Overall ASR: 0.9547
+accuracy on clean test nodes: 0.8255
+Defense: isolate,Test_model: GAT,Overall ASR: 0.9533
+accuracy on clean test nodes: 0.8544
+Defense: isolate,Test_model: GraphSage,Overall ASR: 0.9503
+accuracy on clean test nodes: 0.8341
+Defense: none,Test_model: GCN,Overall ASR: 0.9650
+accuracy on clean test nodes: 0.8229
+Defense: none,Test_model: GAT,Overall ASR: 0.9608
+accuracy on clean test nodes: 0.8564
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9557
+accuracy on clean test nodes: 0.8326
+Defense: prune,Test_model: GCN,Overall ASR: 0.9557
+accuracy on clean test nodes: 0.8290
+Defense: prune,Test_model: GAT,Overall ASR: 0.9562
+accuracy on clean test nodes: 0.8549
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9466
+accuracy on clean test nodes: 0.8316
+Defense: isolate,Test_model: GCN,Overall ASR: 0.9520
+accuracy on clean test nodes: 0.8300
+Defense: isolate,Test_model: GAT,Overall ASR: 0.9427
+accuracy on clean test nodes: 0.8549
+Defense: isolate,Test_model: GraphSage,Overall ASR: 0.9555
+accuracy on clean test nodes: 0.8295
+Defense: none,Test_model: GCN,Overall ASR: 0.9674
+accuracy on clean test nodes: 0.8184
+Defense: none,Test_model: GAT,Overall ASR: 0.9740
+accuracy on clean test nodes: 0.8549
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9596
+accuracy on clean test nodes: 0.8290
+Defense: prune,Test_model: GCN,Overall ASR: 0.9550
+accuracy on clean test nodes: 0.8270
+Defense: prune,Test_model: GAT,Overall ASR: 0.9484
+accuracy on clean test nodes: 0.8524
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9511
+accuracy on clean test nodes: 0.8311
+Defense: isolate,Test_model: GCN,Overall ASR: 0.9564
+accuracy on clean test nodes: 0.8260
+Defense: isolate,Test_model: GAT,Overall ASR: 0.9378
+accuracy on clean test nodes: 0.8554
+Defense: isolate,Test_model: GraphSage,Overall ASR: 0.9451
+accuracy on clean test nodes: 0.8326
+Defense: none,Test_model: GCN,Overall ASR: 0.9733
+accuracy on clean test nodes: 0.8031
+Defense: none,Test_model: GAT,Overall ASR: 0.3337
+accuracy on clean test nodes: 0.8524
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9593
+accuracy on clean test nodes: 0.8305
+Defense: prune,Test_model: GCN,Overall ASR: 0.9586
+accuracy on clean test nodes: 0.8280
+Defense: prune,Test_model: GAT,Overall ASR: 0.9539
+accuracy on clean test nodes: 0.8529
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9471
+accuracy on clean test nodes: 0.8305
+Defense: isolate,Test_model: GCN,Overall ASR: 0.9611
+accuracy on clean test nodes: 0.8113
+Defense: isolate,Test_model: GAT,Overall ASR: 0.3333
+accuracy on clean test nodes: 0.8544
+Defense: isolate,Test_model: GraphSage,Overall ASR: 0.9496
+accuracy on clean test nodes: 0.8250
+Defense: none,Test_model: GCN,Overall ASR: 0.9724
+accuracy on clean test nodes: 0.8280
+Defense: none,Test_model: GAT,Overall ASR: 0.9380
+accuracy on clean test nodes: 0.8549
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9567
+accuracy on clean test nodes: 0.8295
+Defense: prune,Test_model: GCN,Overall ASR: 0.9542
+accuracy on clean test nodes: 0.8295
+Defense: prune,Test_model: GAT,Overall ASR: 0.9361
+accuracy on clean test nodes: 0.8559
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9483
+accuracy on clean test nodes: 0.8295
+Defense: isolate,Test_model: GCN,Overall ASR: 0.9589
+accuracy on clean test nodes: 0.8275
+Defense: isolate,Test_model: GAT,Overall ASR: 0.9439
+accuracy on clean test nodes: 0.8554
+Defense: isolate,Test_model: GraphSage,Overall ASR: 0.9479
+accuracy on clean test nodes: 0.8229
+Defense: none,Test_model: GCN,Overall ASR: 0.9655
+accuracy on clean test nodes: 0.8295
+Defense: none,Test_model: GAT,Overall ASR: 0.9319
+accuracy on clean test nodes: 0.8554
+Defense: none,Test_model: GraphSage,Overall ASR: 0.9586
+accuracy on clean test nodes: 0.8311
+Defense: prune,Test_model: GCN,Overall ASR: 0.9545
+accuracy on clean test nodes: 0.8275
+Defense: prune,Test_model: GAT,Overall ASR: 0.9746
+accuracy on clean test nodes: 0.8549
+Defense: prune,Test_model: GraphSage,Overall ASR: 0.9466
+accuracy on clean test nodes: 0.8295

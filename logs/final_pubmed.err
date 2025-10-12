@@ -1,0 +1,660 @@
+2024-09-03 14:54:28,209 - INFO - args:Namespace(cuda=False, dataset='Pubmed', debug=True, defense_mode='none', device_id=0, dis_weight=0.0, dropout=0.5, epochs=200, evaluate_mode='1by1', exp=8, finetune=True, fit_attach_num=150, hidden=64, homo_boost_thrd=0.4, homo_loss_weight=5.0, index=0, inner=1, layer=2, max_subgraph=3, mode=False, model='GCN', moreFit=False, new='Y', no_cuda=True, norm_weight=0.0001, num_attach=150, num_prompts=150, position=True, prompt_size=5, prune_thr=0.1, seed=106, selection_method='cluster_degree', target_class=0, test_thr=0.2, thrd=0.5, train=True, train_lr=0.005, trojan_epochs=1000, val_feq=100, weight_decay=0.0005)
+
+Embedding Subgraphs:   0%|          | 0/57107 [00:00<?, ?it/s]
+Embedding Subgraphs:   0%|          | 123/57107 [00:00<00:46, 1222.83it/s]
+Embedding Subgraphs:   0%|          | 249/57107 [00:00<00:45, 1241.48it/s]
+Embedding Subgraphs:   1%|          | 375/57107 [00:00<00:45, 1246.49it/s]
+Embedding Subgraphs:   1%|          | 503/57107 [00:00<00:45, 1256.61it/s]
+Embedding Subgraphs:   1%|          | 630/57107 [00:00<00:44, 1260.14it/s]
+Embedding Subgraphs:   1%|▏         | 757/57107 [00:00<00:44, 1263.02it/s]
+Embedding Subgraphs:   2%|▏         | 885/57107 [00:00<00:44, 1265.73it/s]
+Embedding Subgraphs:   2%|▏         | 1013/57107 [00:00<00:44, 1267.77it/s]
+Embedding Subgraphs:   2%|▏         | 1141/57107 [00:00<00:44, 1269.01it/s]
+Embedding Subgraphs:   2%|▏         | 1270/57107 [00:01<00:43, 1273.65it/s]
+Embedding Subgraphs:   2%|▏         | 1398/57107 [00:01<00:43, 1273.75it/s]
+Embedding Subgraphs:   3%|▎         | 1527/57107 [00:01<00:43, 1277.46it/s]
+Embedding Subgraphs:   3%|▎         | 1655/57107 [00:01<00:43, 1264.92it/s]
+Embedding Subgraphs:   3%|▎         | 1783/57107 [00:01<00:43, 1268.19it/s]
+Embedding Subgraphs:   3%|▎         | 1912/57107 [00:01<00:43, 1273.63it/s]
+Embedding Subgraphs:   4%|▎         | 2040/57107 [00:01<00:43, 1272.57it/s]
+Embedding Subgraphs:   4%|▍         | 2168/57107 [00:01<00:43, 1271.84it/s]
+Embedding Subgraphs:   4%|▍         | 2296/57107 [00:01<00:43, 1267.62it/s]
+Embedding Subgraphs:   4%|▍         | 2425/57107 [00:01<00:42, 1272.24it/s]
+Embedding Subgraphs:   4%|▍         | 2554/57107 [00:02<00:42, 1277.42it/s]
+Embedding Subgraphs:   5%|▍         | 2682/57107 [00:02<00:42, 1277.04it/s]
+Embedding Subgraphs:   5%|▍         | 2811/57107 [00:02<00:42, 1279.76it/s]
+Embedding Subgraphs:   5%|▌         | 2939/57107 [00:02<00:42, 1276.32it/s]
+Embedding Subgraphs:   5%|▌         | 3067/57107 [00:02<00:42, 1275.24it/s]
+Embedding Subgraphs:   6%|▌         | 3195/57107 [00:02<00:42, 1273.26it/s]
+Embedding Subgraphs:   6%|▌         | 3324/57107 [00:02<00:42, 1275.46it/s]
+Embedding Subgraphs:   6%|▌         | 3452/57107 [00:02<00:42, 1272.60it/s]
+Embedding Subgraphs:   6%|▋         | 3580/57107 [00:02<00:42, 1270.01it/s]
+Embedding Subgraphs:   6%|▋         | 3708/57107 [00:02<00:42, 1267.09it/s]
+Embedding Subgraphs:   7%|▋         | 3835/57107 [00:03<00:42, 1266.61it/s]
+Embedding Subgraphs:   7%|▋         | 3962/57107 [00:03<00:42, 1250.44it/s]
+Embedding Subgraphs:   7%|▋         | 4088/57107 [00:03<00:42, 1252.78it/s]
+Embedding Subgraphs:   7%|▋         | 4216/57107 [00:03<00:42, 1258.47it/s]
+Embedding Subgraphs:   8%|▊         | 4345/57107 [00:03<00:41, 1265.52it/s]
+Embedding Subgraphs:   8%|▊         | 4473/57107 [00:03<00:41, 1269.67it/s]
+Embedding Subgraphs:   8%|▊         | 4600/57107 [00:03<00:41, 1267.64it/s]
+Embedding Subgraphs:   8%|▊         | 4728/57107 [00:03<00:41, 1270.50it/s]
+Embedding Subgraphs:   9%|▊         | 4856/57107 [00:03<00:41, 1272.21it/s]
+Embedding Subgraphs:   9%|▊         | 4984/57107 [00:03<00:40, 1271.74it/s]
+Embedding Subgraphs:   9%|▉         | 5114/57107 [00:04<00:40, 1278.81it/s]
+Embedding Subgraphs:   9%|▉         | 5242/57107 [00:04<00:40, 1274.05it/s]
+Embedding Subgraphs:   9%|▉         | 5370/57107 [00:04<00:40, 1265.57it/s]
+Embedding Subgraphs:  10%|▉         | 5497/57107 [00:04<00:41, 1258.60it/s]
+Embedding Subgraphs:  10%|▉         | 5624/57107 [00:04<00:40, 1259.88it/s]
+Embedding Subgraphs:  10%|█         | 5751/57107 [00:04<00:40, 1261.05it/s]
+Embedding Subgraphs:  10%|█         | 5879/57107 [00:04<00:40, 1263.70it/s]
+Embedding Subgraphs:  11%|█         | 6007/57107 [00:04<00:40, 1267.19it/s]
+Embedding Subgraphs:  11%|█         | 6134/57107 [00:04<00:41, 1239.86it/s]
+Embedding Subgraphs:  11%|█         | 6259/57107 [00:04<00:41, 1225.51it/s]
+Embedding Subgraphs:  11%|█         | 6382/57107 [00:05<00:42, 1206.25it/s]
+Embedding Subgraphs:  11%|█▏        | 6509/57107 [00:05<00:41, 1223.39it/s]
+Embedding Subgraphs:  12%|█▏        | 6636/57107 [00:05<00:40, 1236.53it/s]
+Embedding Subgraphs:  12%|█▏        | 6763/57107 [00:05<00:40, 1245.31it/s]
+Embedding Subgraphs:  12%|█▏        | 6890/57107 [00:05<00:40, 1249.98it/s]
+Embedding Subgraphs:  12%|█▏        | 7017/57107 [00:05<00:39, 1254.57it/s]
+Embedding Subgraphs:  13%|█▎        | 7144/57107 [00:05<00:39, 1256.60it/s]
+Embedding Subgraphs:  13%|█▎        | 7272/57107 [00:05<00:39, 1260.66it/s]
+Embedding Subgraphs:  13%|█▎        | 7399/57107 [00:05<00:39, 1257.27it/s]
+Embedding Subgraphs:  13%|█▎        | 7527/57107 [00:05<00:39, 1263.28it/s]
+Embedding Subgraphs:  13%|█▎        | 7654/57107 [00:06<00:39, 1263.09it/s]
+Embedding Subgraphs:  14%|█▎        | 7781/57107 [00:06<00:39, 1264.39it/s]
+Embedding Subgraphs:  14%|█▍        | 7908/57107 [00:06<00:39, 1252.66it/s]
+Embedding Subgraphs:  14%|█▍        | 8034/57107 [00:06<00:39, 1245.23it/s]
+Embedding Subgraphs:  14%|█▍        | 8159/57107 [00:06<00:39, 1237.98it/s]
+Embedding Subgraphs:  15%|█▍        | 8283/57107 [00:06<00:39, 1226.08it/s]
+Embedding Subgraphs:  15%|█▍        | 8409/57107 [00:06<00:39, 1235.01it/s]
+Embedding Subgraphs:  15%|█▍        | 8533/57107 [00:06<00:39, 1226.77it/s]
+Embedding Subgraphs:  15%|█▌        | 8657/57107 [00:06<00:39, 1230.25it/s]
+Embedding Subgraphs:  15%|█▌        | 8784/57107 [00:06<00:38, 1239.30it/s]
+Embedding Subgraphs:  16%|█▌        | 8911/57107 [00:07<00:38, 1247.66it/s]
+Embedding Subgraphs:  16%|█▌        | 9040/57107 [00:07<00:38, 1257.42it/s]
+Embedding Subgraphs:  16%|█▌        | 9167/57107 [00:07<00:38, 1259.73it/s]
+Embedding Subgraphs:  16%|█▋        | 9294/57107 [00:07<00:37, 1261.88it/s]
+Embedding Subgraphs:  16%|█▋        | 9421/57107 [00:07<00:37, 1259.69it/s]
+Embedding Subgraphs:  17%|█▋        | 9549/57107 [00:07<00:37, 1264.54it/s]
+Embedding Subgraphs:  17%|█▋        | 9677/57107 [00:07<00:37, 1267.83it/s]
+Embedding Subgraphs:  17%|█▋        | 9805/57107 [00:07<00:37, 1268.74it/s]
+Embedding Subgraphs:  17%|█▋        | 9933/57107 [00:07<00:37, 1270.51it/s]
+Embedding Subgraphs:  18%|█▊        | 10062/57107 [00:07<00:36, 1274.04it/s]
+Embedding Subgraphs:  18%|█▊        | 10190/57107 [00:08<00:36, 1270.50it/s]
+Embedding Subgraphs:  18%|█▊        | 10318/57107 [00:08<00:36, 1272.30it/s]
+Embedding Subgraphs:  18%|█▊        | 10446/57107 [00:08<00:37, 1256.08it/s]
+Embedding Subgraphs:  19%|█▊        | 10574/57107 [00:08<00:36, 1261.02it/s]
+Embedding Subgraphs:  19%|█▊        | 10702/57107 [00:08<00:36, 1265.31it/s]
+Embedding Subgraphs:  19%|█▉        | 10829/57107 [00:08<01:09, 667.50it/s] 
+Embedding Subgraphs:  19%|█▉        | 10958/57107 [00:08<00:59, 781.15it/s]
+Embedding Subgraphs:  19%|█▉        | 11081/57107 [00:09<00:52, 873.38it/s]
+Embedding Subgraphs:  20%|█▉        | 11193/57107 [00:09<00:50, 907.61it/s]
+Embedding Subgraphs:  20%|█▉        | 11322/57107 [00:09<00:45, 998.59it/s]
+Embedding Subgraphs:  20%|██        | 11452/57107 [00:09<00:42, 1074.35it/s]
+Embedding Subgraphs:  20%|██        | 11584/57107 [00:09<00:40, 1138.00it/s]
+Embedding Subgraphs:  21%|██        | 11713/57107 [00:09<00:38, 1178.70it/s]
+Embedding Subgraphs:  21%|██        | 11844/57107 [00:09<00:37, 1214.11it/s]
+Embedding Subgraphs:  21%|██        | 11974/57107 [00:09<00:36, 1237.41it/s]
+Embedding Subgraphs:  21%|██        | 12105/57107 [00:09<00:35, 1256.44it/s]
+Embedding Subgraphs:  21%|██▏       | 12234/57107 [00:10<00:35, 1266.13it/s]
+Embedding Subgraphs:  22%|██▏       | 12364/57107 [00:10<00:35, 1273.31it/s]
+Embedding Subgraphs:  22%|██▏       | 12493/57107 [00:10<00:34, 1277.68it/s]
+Embedding Subgraphs:  22%|██▏       | 12624/57107 [00:10<00:34, 1287.14it/s]
+Embedding Subgraphs:  22%|██▏       | 12754/57107 [00:10<00:34, 1287.63it/s]
+Embedding Subgraphs:  23%|██▎       | 12884/57107 [00:10<00:34, 1289.54it/s]
+Embedding Subgraphs:  23%|██▎       | 13015/57107 [00:10<00:34, 1293.23it/s]
+Embedding Subgraphs:  23%|██▎       | 13145/57107 [00:10<00:33, 1293.27it/s]
+Embedding Subgraphs:  23%|██▎       | 13275/57107 [00:10<00:33, 1294.02it/s]
+Embedding Subgraphs:  23%|██▎       | 13405/57107 [00:10<00:33, 1294.29it/s]
+Embedding Subgraphs:  24%|██▎       | 13535/57107 [00:11<00:33, 1295.01it/s]
+Embedding Subgraphs:  24%|██▍       | 13666/57107 [00:11<00:33, 1297.35it/s]
+Embedding Subgraphs:  24%|██▍       | 13797/57107 [00:11<00:33, 1298.41it/s]
+Embedding Subgraphs:  24%|██▍       | 13928/57107 [00:11<00:33, 1300.89it/s]
+Embedding Subgraphs:  25%|██▍       | 14059/57107 [00:11<00:33, 1302.28it/s]
+Embedding Subgraphs:  25%|██▍       | 14190/57107 [00:11<00:33, 1295.52it/s]
+Embedding Subgraphs:  25%|██▌       | 14321/57107 [00:11<00:32, 1298.08it/s]
+Embedding Subgraphs:  25%|██▌       | 14452/57107 [00:11<00:32, 1300.34it/s]
+Embedding Subgraphs:  26%|██▌       | 14583/57107 [00:11<00:32, 1301.85it/s]
+Embedding Subgraphs:  26%|██▌       | 14714/57107 [00:11<00:32, 1298.49it/s]
+Embedding Subgraphs:  26%|██▌       | 14844/57107 [00:12<00:33, 1255.70it/s]
+Embedding Subgraphs:  26%|██▌       | 14970/57107 [00:12<00:33, 1251.69it/s]
+Embedding Subgraphs:  26%|██▋       | 15101/57107 [00:12<00:33, 1267.55it/s]
+Embedding Subgraphs:  27%|██▋       | 15233/57107 [00:12<00:32, 1280.76it/s]
+Embedding Subgraphs:  27%|██▋       | 15363/57107 [00:12<00:32, 1284.43it/s]
+Embedding Subgraphs:  27%|██▋       | 15494/57107 [00:12<00:32, 1289.96it/s]
+Embedding Subgraphs:  27%|██▋       | 15624/57107 [00:12<00:32, 1290.31it/s]
+Embedding Subgraphs:  28%|██▊       | 15754/57107 [00:12<00:32, 1291.20it/s]
+Embedding Subgraphs:  28%|██▊       | 15884/57107 [00:12<00:31, 1293.59it/s]
+Embedding Subgraphs:  28%|██▊       | 16014/57107 [00:12<00:31, 1290.68it/s]
+Embedding Subgraphs:  28%|██▊       | 16144/57107 [00:13<00:31, 1289.55it/s]
+Embedding Subgraphs:  28%|██▊       | 16275/57107 [00:13<00:31, 1292.76it/s]
+Embedding Subgraphs:  29%|██▊       | 16405/57107 [00:13<00:32, 1245.30it/s]
+Embedding Subgraphs:  29%|██▉       | 16535/57107 [00:13<00:32, 1260.07it/s]
+Embedding Subgraphs:  29%|██▉       | 16662/57107 [00:13<00:32, 1238.41it/s]
+Embedding Subgraphs:  29%|██▉       | 16790/57107 [00:13<00:32, 1249.64it/s]
+Embedding Subgraphs:  30%|██▉       | 16921/57107 [00:13<00:31, 1264.59it/s]
+Embedding Subgraphs:  30%|██▉       | 17051/57107 [00:13<00:31, 1273.35it/s]
+Embedding Subgraphs:  30%|███       | 17181/57107 [00:13<00:31, 1280.14it/s]
+Embedding Subgraphs:  30%|███       | 17311/57107 [00:13<00:30, 1284.41it/s]
+Embedding Subgraphs:  31%|███       | 17441/57107 [00:14<00:30, 1287.34it/s]
+Embedding Subgraphs:  31%|███       | 17570/57107 [00:14<00:30, 1278.71it/s]
+Embedding Subgraphs:  31%|███       | 17700/57107 [00:14<00:30, 1283.49it/s]
+Embedding Subgraphs:  31%|███       | 17829/57107 [00:14<00:30, 1283.35it/s]
+Embedding Subgraphs:  31%|███▏      | 17960/57107 [00:14<00:30, 1288.63it/s]
+Embedding Subgraphs:  32%|███▏      | 18090/57107 [00:14<00:30, 1290.16it/s]
+Embedding Subgraphs:  32%|███▏      | 18220/57107 [00:14<00:30, 1292.44it/s]
+Embedding Subgraphs:  32%|███▏      | 18350/57107 [00:14<00:29, 1292.89it/s]
+Embedding Subgraphs:  32%|███▏      | 18480/57107 [00:14<00:29, 1294.35it/s]
+Embedding Subgraphs:  33%|███▎      | 18610/57107 [00:14<00:29, 1291.57it/s]
+Embedding Subgraphs:  33%|███▎      | 18742/57107 [00:15<00:29, 1298.01it/s]
+Embedding Subgraphs:  33%|███▎      | 18872/57107 [00:15<00:29, 1285.80it/s]
+Embedding Subgraphs:  33%|███▎      | 19002/57107 [00:15<00:29, 1288.07it/s]
+Embedding Subgraphs:  34%|███▎      | 19131/57107 [00:15<00:29, 1288.42it/s]
+Embedding Subgraphs:  34%|███▎      | 19260/57107 [00:15<00:29, 1288.33it/s]
+Embedding Subgraphs:  34%|███▍      | 19390/57107 [00:15<00:29, 1289.74it/s]
+Embedding Subgraphs:  34%|███▍      | 19520/57107 [00:15<00:29, 1290.08it/s]
+Embedding Subgraphs:  34%|███▍      | 19651/57107 [00:15<00:28, 1293.72it/s]
+Embedding Subgraphs:  35%|███▍      | 19782/57107 [00:15<00:28, 1296.20it/s]
+Embedding Subgraphs:  35%|███▍      | 19912/57107 [00:15<00:28, 1293.65it/s]
+Embedding Subgraphs:  35%|███▌      | 20043/57107 [00:16<00:28, 1297.42it/s]
+Embedding Subgraphs:  35%|███▌      | 20174/57107 [00:16<00:28, 1300.18it/s]
+Embedding Subgraphs:  36%|███▌      | 20305/57107 [00:16<00:28, 1290.44it/s]
+Embedding Subgraphs:  36%|███▌      | 20436/57107 [00:16<00:28, 1294.24it/s]
+Embedding Subgraphs:  36%|███▌      | 20567/57107 [00:16<00:28, 1296.61it/s]
+Embedding Subgraphs:  36%|███▌      | 20698/57107 [00:16<00:28, 1298.60it/s]
+Embedding Subgraphs:  36%|███▋      | 20828/57107 [00:16<00:27, 1297.71it/s]
+Embedding Subgraphs:  37%|███▋      | 20958/57107 [00:16<00:27, 1291.34it/s]
+Embedding Subgraphs:  37%|███▋      | 21089/57107 [00:16<00:27, 1295.09it/s]
+Embedding Subgraphs:  37%|███▋      | 21220/57107 [00:16<00:27, 1296.94it/s]
+Embedding Subgraphs:  37%|███▋      | 21351/57107 [00:17<00:27, 1298.85it/s]
+Embedding Subgraphs:  38%|███▊      | 21481/57107 [00:17<00:27, 1298.88it/s]
+Embedding Subgraphs:  38%|███▊      | 21611/57107 [00:17<00:27, 1274.36it/s]
+Embedding Subgraphs:  38%|███▊      | 21739/57107 [00:17<00:27, 1268.86it/s]
+Embedding Subgraphs:  38%|███▊      | 21866/57107 [00:17<00:27, 1267.10it/s]
+Embedding Subgraphs:  39%|███▊      | 21993/57107 [00:17<00:27, 1265.88it/s]
+Embedding Subgraphs:  39%|███▊      | 22121/57107 [00:17<00:27, 1268.13it/s]
+Embedding Subgraphs:  39%|███▉      | 22249/57107 [00:17<00:27, 1269.99it/s]
+Embedding Subgraphs:  39%|███▉      | 22377/57107 [00:17<00:27, 1260.72it/s]
+Embedding Subgraphs:  39%|███▉      | 22504/57107 [00:18<00:27, 1259.11it/s]
+Embedding Subgraphs:  40%|███▉      | 22631/57107 [00:18<00:27, 1261.04it/s]
+Embedding Subgraphs:  40%|███▉      | 22758/57107 [00:18<00:27, 1250.61it/s]
+Embedding Subgraphs:  40%|████      | 22884/57107 [00:18<00:27, 1229.45it/s]
+Embedding Subgraphs:  40%|████      | 23008/57107 [00:18<00:28, 1198.73it/s]
+Embedding Subgraphs:  41%|████      | 23129/57107 [00:18<00:28, 1189.43it/s]
+Embedding Subgraphs:  41%|████      | 23255/57107 [00:18<00:28, 1207.09it/s]
+Embedding Subgraphs:  41%|████      | 23380/57107 [00:18<00:27, 1218.92it/s]
+Embedding Subgraphs:  41%|████      | 23505/57107 [00:18<00:27, 1227.40it/s]
+Embedding Subgraphs:  41%|████▏     | 23630/57107 [00:18<00:27, 1234.07it/s]
+Embedding Subgraphs:  42%|████▏     | 23758/57107 [00:19<00:26, 1244.93it/s]
+Embedding Subgraphs:  42%|████▏     | 23885/57107 [00:19<00:26, 1250.44it/s]
+Embedding Subgraphs:  42%|████▏     | 24011/57107 [00:19<00:27, 1206.42it/s]
+Embedding Subgraphs:  42%|████▏     | 24137/57107 [00:19<00:26, 1221.85it/s]
+Embedding Subgraphs:  42%|████▏     | 24265/57107 [00:19<00:26, 1237.91it/s]
+Embedding Subgraphs:  43%|████▎     | 24390/57107 [00:19<00:26, 1240.08it/s]
+Embedding Subgraphs:  43%|████▎     | 24518/57107 [00:19<00:26, 1251.48it/s]
+Embedding Subgraphs:  43%|████▎     | 24647/57107 [00:19<00:25, 1261.82it/s]
+Embedding Subgraphs:  43%|████▎     | 24774/57107 [00:19<00:25, 1263.63it/s]
+Embedding Subgraphs:  44%|████▎     | 24901/57107 [00:19<00:25, 1264.60it/s]
+Embedding Subgraphs:  44%|████▍     | 25028/57107 [00:20<00:25, 1262.75it/s]
+Embedding Subgraphs:  44%|████▍     | 25157/57107 [00:20<00:25, 1268.90it/s]
+Embedding Subgraphs:  44%|████▍     | 25284/57107 [00:20<00:25, 1266.92it/s]
+Embedding Subgraphs:  44%|████▍     | 25411/57107 [00:20<00:25, 1267.45it/s]
+Embedding Subgraphs:  45%|████▍     | 25538/57107 [00:20<00:25, 1262.57it/s]
+Embedding Subgraphs:  45%|████▍     | 25667/57107 [00:20<00:24, 1268.76it/s]
+Embedding Subgraphs:  45%|████▌     | 25795/57107 [00:20<00:24, 1270.41it/s]
+Embedding Subgraphs:  45%|████▌     | 25924/57107 [00:20<00:24, 1273.64it/s]
+Embedding Subgraphs:  46%|████▌     | 26052/57107 [00:20<00:24, 1266.29it/s]
+Embedding Subgraphs:  46%|████▌     | 26181/57107 [00:20<00:24, 1272.66it/s]
+Embedding Subgraphs:  46%|████▌     | 26311/57107 [00:21<00:24, 1277.84it/s]
+Embedding Subgraphs:  46%|████▋     | 26439/57107 [00:21<00:24, 1277.25it/s]
+Embedding Subgraphs:  47%|████▋     | 26567/57107 [00:21<00:24, 1268.86it/s]
+Embedding Subgraphs:  47%|████▋     | 26695/57107 [00:21<00:23, 1270.88it/s]
+Embedding Subgraphs:  47%|████▋     | 26824/57107 [00:21<00:23, 1274.19it/s]
+Embedding Subgraphs:  47%|████▋     | 26952/57107 [00:21<00:23, 1272.93it/s]
+Embedding Subgraphs:  47%|████▋     | 27080/57107 [00:21<00:23, 1257.55it/s]
+Embedding Subgraphs:  48%|████▊     | 27209/57107 [00:21<00:23, 1264.64it/s]
+Embedding Subgraphs:  48%|████▊     | 27336/57107 [00:21<00:23, 1265.87it/s]
+Embedding Subgraphs:  48%|████▊     | 27464/57107 [00:21<00:23, 1268.40it/s]
+Embedding Subgraphs:  48%|████▊     | 27592/57107 [00:22<00:23, 1271.55it/s]
+Embedding Subgraphs:  49%|████▊     | 27720/57107 [00:22<00:23, 1274.01it/s]
+Embedding Subgraphs:  49%|████▉     | 27848/57107 [00:22<00:23, 1267.55it/s]
+Embedding Subgraphs:  49%|████▉     | 27977/57107 [00:22<00:22, 1273.07it/s]
+Embedding Subgraphs:  49%|████▉     | 28105/57107 [00:22<00:22, 1274.87it/s]
+Embedding Subgraphs:  49%|████▉     | 28233/57107 [00:22<00:22, 1261.30it/s]
+Embedding Subgraphs:  50%|████▉     | 28361/57107 [00:22<00:22, 1265.94it/s]
+Embedding Subgraphs:  50%|████▉     | 28490/57107 [00:22<00:22, 1272.26it/s]
+Embedding Subgraphs:  50%|█████     | 28618/57107 [00:22<00:22, 1271.76it/s]
+Embedding Subgraphs:  50%|█████     | 28746/57107 [00:22<00:22, 1269.03it/s]
+Embedding Subgraphs:  51%|█████     | 28875/57107 [00:23<00:22, 1273.21it/s]
+Embedding Subgraphs:  51%|█████     | 29003/57107 [00:23<00:22, 1274.86it/s]
+Embedding Subgraphs:  51%|█████     | 29131/57107 [00:23<00:22, 1267.14it/s]
+Embedding Subgraphs:  51%|█████     | 29260/57107 [00:23<00:21, 1271.15it/s]
+Embedding Subgraphs:  51%|█████▏    | 29388/57107 [00:23<00:21, 1273.75it/s]
+Embedding Subgraphs:  52%|█████▏    | 29516/57107 [00:23<00:21, 1274.34it/s]
+Embedding Subgraphs:  52%|█████▏    | 29644/57107 [00:23<00:21, 1273.18it/s]
+Embedding Subgraphs:  52%|█████▏    | 29774/57107 [00:23<00:21, 1278.29it/s]
+Embedding Subgraphs:  52%|█████▏    | 29902/57107 [00:23<00:21, 1274.45it/s]
+Embedding Subgraphs:  53%|█████▎    | 30030/57107 [00:23<00:21, 1274.94it/s]
+Embedding Subgraphs:  53%|█████▎    | 30158/57107 [00:24<00:21, 1252.38it/s]
+Embedding Subgraphs:  53%|█████▎    | 30285/57107 [00:24<00:21, 1257.56it/s]
+Embedding Subgraphs:  53%|█████▎    | 30411/57107 [00:24<00:21, 1257.11it/s]
+Embedding Subgraphs:  53%|█████▎    | 30539/57107 [00:24<00:21, 1262.74it/s]
+Embedding Subgraphs:  54%|█████▎    | 30668/57107 [00:24<00:20, 1268.86it/s]
+Embedding Subgraphs:  54%|█████▍    | 30795/57107 [00:24<00:20, 1260.00it/s]
+Embedding Subgraphs:  54%|█████▍    | 30923/57107 [00:24<00:20, 1263.19it/s]
+Embedding Subgraphs:  54%|█████▍    | 31050/57107 [00:24<00:20, 1265.01it/s]
+Embedding Subgraphs:  55%|█████▍    | 31177/57107 [00:24<00:20, 1255.72it/s]
+Embedding Subgraphs:  55%|█████▍    | 31305/57107 [00:24<00:20, 1261.27it/s]
+Embedding Subgraphs:  55%|█████▌    | 31433/57107 [00:25<00:20, 1264.91it/s]
+Embedding Subgraphs:  55%|█████▌    | 31561/57107 [00:25<00:20, 1269.30it/s]
+Embedding Subgraphs:  55%|█████▌    | 31688/57107 [00:25<00:20, 1262.08it/s]
+Embedding Subgraphs:  56%|█████▌    | 31816/57107 [00:25<00:19, 1266.85it/s]
+Embedding Subgraphs:  56%|█████▌    | 31943/57107 [00:25<00:19, 1265.41it/s]
+Embedding Subgraphs:  56%|█████▌    | 32070/57107 [00:25<00:19, 1265.17it/s]
+Embedding Subgraphs:  56%|█████▋    | 32199/57107 [00:25<00:19, 1269.86it/s]
+Embedding Subgraphs:  57%|█████▋    | 32327/57107 [00:25<00:19, 1271.82it/s]
+Embedding Subgraphs:  57%|█████▋    | 32455/57107 [00:25<00:19, 1269.85it/s]
+Embedding Subgraphs:  57%|█████▋    | 32583/57107 [00:25<00:19, 1271.51it/s]
+Embedding Subgraphs:  57%|█████▋    | 32712/57107 [00:26<00:19, 1276.49it/s]
+Embedding Subgraphs:  58%|█████▊    | 32840/57107 [00:26<00:19, 1249.84it/s]
+Embedding Subgraphs:  58%|█████▊    | 32966/57107 [00:26<00:19, 1248.96it/s]
+Embedding Subgraphs:  58%|█████▊    | 33095/57107 [00:26<00:19, 1260.46it/s]
+Embedding Subgraphs:  58%|█████▊    | 33223/57107 [00:26<00:18, 1265.70it/s]
+Embedding Subgraphs:  58%|█████▊    | 33352/57107 [00:26<00:18, 1270.72it/s]
+Embedding Subgraphs:  59%|█████▊    | 33480/57107 [00:26<00:18, 1248.05it/s]
+Embedding Subgraphs:  59%|█████▉    | 33606/57107 [00:26<00:18, 1251.29it/s]
+Embedding Subgraphs:  59%|█████▉    | 33733/57107 [00:26<00:18, 1254.53it/s]
+Embedding Subgraphs:  59%|█████▉    | 33860/57107 [00:27<00:18, 1256.94it/s]
+Embedding Subgraphs:  60%|█████▉    | 33986/57107 [00:27<00:18, 1225.53it/s]
+Embedding Subgraphs:  60%|█████▉    | 34113/57107 [00:27<00:18, 1237.76it/s]
+Embedding Subgraphs:  60%|█████▉    | 34237/57107 [00:27<00:18, 1237.40it/s]
+Embedding Subgraphs:  60%|██████    | 34365/57107 [00:27<00:18, 1248.06it/s]
+Embedding Subgraphs:  60%|██████    | 34493/57107 [00:27<00:18, 1255.04it/s]
+Embedding Subgraphs:  61%|██████    | 34621/57107 [00:27<00:17, 1260.86it/s]
+Embedding Subgraphs:  61%|██████    | 34749/57107 [00:27<00:17, 1264.78it/s]
+Embedding Subgraphs:  61%|██████    | 34878/57107 [00:27<00:17, 1271.24it/s]
+Embedding Subgraphs:  61%|██████▏   | 35007/57107 [00:27<00:17, 1274.01it/s]
+Embedding Subgraphs:  62%|██████▏   | 35136/57107 [00:28<00:17, 1277.20it/s]
+Embedding Subgraphs:  62%|██████▏   | 35264/57107 [00:28<00:17, 1267.24it/s]
+Embedding Subgraphs:  62%|██████▏   | 35393/57107 [00:28<00:17, 1272.58it/s]
+Embedding Subgraphs:  62%|██████▏   | 35521/57107 [00:28<00:17, 1265.05it/s]
+Embedding Subgraphs:  62%|██████▏   | 35648/57107 [00:28<00:17, 1240.75it/s]
+Embedding Subgraphs:  63%|██████▎   | 35773/57107 [00:28<00:17, 1240.01it/s]
+Embedding Subgraphs:  63%|██████▎   | 35901/57107 [00:28<00:16, 1249.90it/s]
+Embedding Subgraphs:  63%|██████▎   | 36030/57107 [00:28<00:16, 1261.39it/s]
+Embedding Subgraphs:  63%|██████▎   | 36157/57107 [00:28<00:16, 1253.53it/s]
+Embedding Subgraphs:  64%|██████▎   | 36285/57107 [00:28<00:16, 1259.37it/s]
+Embedding Subgraphs:  64%|██████▍   | 36414/57107 [00:29<00:16, 1266.85it/s]
+Embedding Subgraphs:  64%|██████▍   | 36543/57107 [00:29<00:16, 1273.39it/s]
+Embedding Subgraphs:  64%|██████▍   | 36671/57107 [00:29<00:19, 1036.72it/s]
+Embedding Subgraphs:  64%|██████▍   | 36798/57107 [00:29<00:18, 1095.91it/s]
+Embedding Subgraphs:  65%|██████▍   | 36927/57107 [00:29<00:17, 1147.66it/s]
+Embedding Subgraphs:  65%|██████▍   | 37055/57107 [00:29<00:16, 1181.92it/s]
+Embedding Subgraphs:  65%|██████▌   | 37184/57107 [00:29<00:16, 1211.28it/s]
+Embedding Subgraphs:  65%|██████▌   | 37312/57107 [00:29<00:16, 1229.59it/s]
+Embedding Subgraphs:  66%|██████▌   | 37440/57107 [00:29<00:15, 1243.80it/s]
+Embedding Subgraphs:  66%|██████▌   | 37569/57107 [00:30<00:15, 1254.60it/s]
+Embedding Subgraphs:  66%|██████▌   | 37698/57107 [00:30<00:15, 1263.09it/s]
+Embedding Subgraphs:  66%|██████▌   | 37827/57107 [00:30<00:15, 1268.85it/s]
+Embedding Subgraphs:  66%|██████▋   | 37956/57107 [00:30<00:15, 1274.92it/s]
+Embedding Subgraphs:  67%|██████▋   | 38085/57107 [00:30<00:14, 1278.65it/s]
+Embedding Subgraphs:  67%|██████▋   | 38214/57107 [00:30<00:14, 1279.29it/s]
+Embedding Subgraphs:  67%|██████▋   | 38343/57107 [00:30<00:14, 1272.39it/s]
+Embedding Subgraphs:  67%|██████▋   | 38471/57107 [00:30<00:14, 1272.84it/s]
+Embedding Subgraphs:  68%|██████▊   | 38599/57107 [00:30<00:14, 1272.94it/s]
+Embedding Subgraphs:  68%|██████▊   | 38728/57107 [00:30<00:14, 1275.76it/s]
+Embedding Subgraphs:  68%|██████▊   | 38857/57107 [00:31<00:14, 1278.24it/s]
+Embedding Subgraphs:  68%|██████▊   | 38987/57107 [00:31<00:14, 1282.48it/s]
+Embedding Subgraphs:  68%|██████▊   | 39116/57107 [00:31<00:14, 1276.58it/s]
+Embedding Subgraphs:  69%|██████▊   | 39245/57107 [00:31<00:13, 1277.99it/s]
+Embedding Subgraphs:  69%|██████▉   | 39373/57107 [00:31<00:13, 1271.94it/s]
+Embedding Subgraphs:  69%|██████▉   | 39501/57107 [00:31<00:13, 1274.09it/s]
+Embedding Subgraphs:  69%|██████▉   | 39629/57107 [00:31<00:13, 1271.32it/s]
+Embedding Subgraphs:  70%|██████▉   | 39757/57107 [00:31<00:13, 1271.75it/s]
+Embedding Subgraphs:  70%|██████▉   | 39886/57107 [00:31<00:13, 1274.52it/s]
+Embedding Subgraphs:  70%|███████   | 40016/57107 [00:31<00:13, 1281.56it/s]
+Embedding Subgraphs:  70%|███████   | 40145/57107 [00:32<00:13, 1280.57it/s]
+Embedding Subgraphs:  71%|███████   | 40274/57107 [00:32<00:13, 1268.37it/s]
+Embedding Subgraphs:  71%|███████   | 40403/57107 [00:32<00:13, 1272.95it/s]
+Embedding Subgraphs:  71%|███████   | 40532/57107 [00:32<00:12, 1275.67it/s]
+Embedding Subgraphs:  71%|███████   | 40661/57107 [00:32<00:12, 1278.45it/s]
+Embedding Subgraphs:  71%|███████▏  | 40790/57107 [00:32<00:12, 1278.93it/s]
+Embedding Subgraphs:  72%|███████▏  | 40919/57107 [00:32<00:12, 1279.36it/s]
+Embedding Subgraphs:  72%|███████▏  | 41047/57107 [00:32<00:12, 1276.53it/s]
+Embedding Subgraphs:  72%|███████▏  | 41175/57107 [00:32<00:12, 1276.15it/s]
+Embedding Subgraphs:  72%|███████▏  | 41304/57107 [00:32<00:12, 1277.26it/s]
+Embedding Subgraphs:  73%|███████▎  | 41432/57107 [00:33<00:12, 1274.65it/s]
+Embedding Subgraphs:  73%|███████▎  | 41561/57107 [00:33<00:12, 1278.15it/s]
+Embedding Subgraphs:  73%|███████▎  | 41689/57107 [00:33<00:12, 1277.78it/s]
+Embedding Subgraphs:  73%|███████▎  | 41819/57107 [00:33<00:11, 1281.67it/s]
+Embedding Subgraphs:  73%|███████▎  | 41949/57107 [00:33<00:11, 1284.09it/s]
+Embedding Subgraphs:  74%|███████▎  | 42079/57107 [00:33<00:11, 1286.40it/s]
+Embedding Subgraphs:  74%|███████▍  | 42208/57107 [00:33<00:11, 1286.31it/s]
+Embedding Subgraphs:  74%|███████▍  | 42339/57107 [00:33<00:11, 1291.30it/s]
+Embedding Subgraphs:  74%|███████▍  | 42469/57107 [00:33<00:11, 1289.21it/s]
+Embedding Subgraphs:  75%|███████▍  | 42598/57107 [00:33<00:11, 1286.66it/s]
+Embedding Subgraphs:  75%|███████▍  | 42727/57107 [00:34<00:11, 1286.33it/s]
+Embedding Subgraphs:  75%|███████▌  | 42856/57107 [00:34<00:11, 1285.53it/s]
+Embedding Subgraphs:  75%|███████▌  | 42986/57107 [00:34<00:10, 1288.20it/s]
+Embedding Subgraphs:  76%|███████▌  | 43116/57107 [00:34<00:10, 1290.43it/s]
+Embedding Subgraphs:  76%|███████▌  | 43246/57107 [00:34<00:10, 1286.03it/s]
+Embedding Subgraphs:  76%|███████▌  | 43375/57107 [00:34<00:10, 1279.67it/s]
+Embedding Subgraphs:  76%|███████▌  | 43503/57107 [00:34<00:10, 1276.00it/s]
+Embedding Subgraphs:  76%|███████▋  | 43631/57107 [00:34<00:10, 1275.87it/s]
+Embedding Subgraphs:  77%|███████▋  | 43760/57107 [00:34<00:10, 1277.88it/s]
+Embedding Subgraphs:  77%|███████▋  | 43890/57107 [00:34<00:10, 1281.72it/s]
+Embedding Subgraphs:  77%|███████▋  | 44019/57107 [00:35<00:10, 1283.82it/s]
+Embedding Subgraphs:  77%|███████▋  | 44148/57107 [00:35<00:10, 1282.88it/s]
+Embedding Subgraphs:  78%|███████▊  | 44277/57107 [00:35<00:10, 1282.44it/s]
+Embedding Subgraphs:  78%|███████▊  | 44406/57107 [00:35<00:09, 1280.46it/s]
+Embedding Subgraphs:  78%|███████▊  | 44535/57107 [00:35<00:09, 1267.17it/s]
+Embedding Subgraphs:  78%|███████▊  | 44663/57107 [00:35<00:09, 1270.79it/s]
+Embedding Subgraphs:  78%|███████▊  | 44792/57107 [00:35<00:09, 1273.76it/s]
+Embedding Subgraphs:  79%|███████▊  | 44921/57107 [00:35<00:09, 1275.76it/s]
+Embedding Subgraphs:  79%|███████▉  | 45050/57107 [00:35<00:09, 1278.90it/s]
+Embedding Subgraphs:  79%|███████▉  | 45178/57107 [00:35<00:09, 1272.40it/s]
+Embedding Subgraphs:  79%|███████▉  | 45306/57107 [00:36<00:09, 1265.01it/s]
+Embedding Subgraphs:  80%|███████▉  | 45433/57107 [00:36<00:09, 1262.33it/s]
+Embedding Subgraphs:  80%|███████▉  | 45560/57107 [00:36<00:09, 1260.13it/s]
+Embedding Subgraphs:  80%|████████  | 45688/57107 [00:36<00:09, 1263.16it/s]
+Embedding Subgraphs:  80%|████████  | 45815/57107 [00:36<00:08, 1261.23it/s]
+Embedding Subgraphs:  80%|████████  | 45942/57107 [00:36<00:08, 1261.29it/s]
+Embedding Subgraphs:  81%|████████  | 46069/57107 [00:36<00:08, 1260.01it/s]
+Embedding Subgraphs:  81%|████████  | 46197/57107 [00:36<00:08, 1263.87it/s]
+Embedding Subgraphs:  81%|████████  | 46324/57107 [00:36<00:08, 1264.13it/s]
+Embedding Subgraphs:  81%|████████▏ | 46453/57107 [00:36<00:08, 1269.68it/s]
+Embedding Subgraphs:  82%|████████▏ | 46580/57107 [00:37<00:08, 1269.47it/s]
+Embedding Subgraphs:  82%|████████▏ | 46709/57107 [00:37<00:08, 1274.43it/s]
+Embedding Subgraphs:  82%|████████▏ | 46837/57107 [00:37<00:08, 1273.95it/s]
+Embedding Subgraphs:  82%|████████▏ | 46965/57107 [00:37<00:07, 1272.59it/s]
+Embedding Subgraphs:  82%|████████▏ | 47093/57107 [00:37<00:07, 1272.47it/s]
+Embedding Subgraphs:  83%|████████▎ | 47222/57107 [00:37<00:07, 1276.68it/s]
+Embedding Subgraphs:  83%|████████▎ | 47350/57107 [00:37<00:07, 1277.36it/s]
+Embedding Subgraphs:  83%|████████▎ | 47478/57107 [00:37<00:07, 1269.61it/s]
+Embedding Subgraphs:  83%|████████▎ | 47605/57107 [00:37<00:07, 1267.92it/s]
+Embedding Subgraphs:  84%|████████▎ | 47733/57107 [00:37<00:07, 1268.81it/s]
+Embedding Subgraphs:  84%|████████▍ | 47860/57107 [00:38<00:07, 1268.43it/s]
+Embedding Subgraphs:  84%|████████▍ | 47988/57107 [00:38<00:07, 1269.03it/s]
+Embedding Subgraphs:  84%|████████▍ | 48117/57107 [00:38<00:07, 1274.36it/s]
+Embedding Subgraphs:  84%|████████▍ | 48246/57107 [00:38<00:06, 1276.40it/s]
+Embedding Subgraphs:  85%|████████▍ | 48374/57107 [00:38<00:06, 1273.38it/s]
+Embedding Subgraphs:  85%|████████▍ | 48502/57107 [00:38<00:06, 1271.87it/s]
+Embedding Subgraphs:  85%|████████▌ | 48630/57107 [00:38<00:06, 1271.94it/s]
+Embedding Subgraphs:  85%|████████▌ | 48758/57107 [00:38<00:06, 1263.47it/s]
+Embedding Subgraphs:  86%|████████▌ | 48886/57107 [00:38<00:06, 1265.63it/s]
+Embedding Subgraphs:  86%|████████▌ | 49015/57107 [00:39<00:06, 1272.52it/s]
+Embedding Subgraphs:  86%|████████▌ | 49143/57107 [00:39<00:06, 1254.47it/s]
+Embedding Subgraphs:  86%|████████▋ | 49269/57107 [00:39<00:06, 1240.10it/s]
+Embedding Subgraphs:  87%|████████▋ | 49398/57107 [00:39<00:06, 1253.51it/s]
+Embedding Subgraphs:  87%|████████▋ | 49526/57107 [00:39<00:06, 1260.95it/s]
+Embedding Subgraphs:  87%|████████▋ | 49653/57107 [00:39<00:05, 1261.03it/s]
+Embedding Subgraphs:  87%|████████▋ | 49781/57107 [00:39<00:05, 1264.46it/s]
+Embedding Subgraphs:  87%|████████▋ | 49911/57107 [00:39<00:05, 1272.27it/s]
+Embedding Subgraphs:  88%|████████▊ | 50040/57107 [00:39<00:05, 1274.54it/s]
+Embedding Subgraphs:  88%|████████▊ | 50168/57107 [00:39<00:05, 1275.25it/s]
+Embedding Subgraphs:  88%|████████▊ | 50296/57107 [00:40<00:05, 1275.16it/s]
+Embedding Subgraphs:  88%|████████▊ | 50425/57107 [00:40<00:05, 1277.90it/s]
+Embedding Subgraphs:  89%|████████▊ | 50554/57107 [00:40<00:05, 1280.06it/s]
+Embedding Subgraphs:  89%|████████▉ | 50683/57107 [00:40<00:05, 1281.73it/s]
+Embedding Subgraphs:  89%|████████▉ | 50812/57107 [00:40<00:05, 1255.48it/s]
+Embedding Subgraphs:  89%|████████▉ | 50941/57107 [00:40<00:04, 1264.26it/s]
+Embedding Subgraphs:  89%|████████▉ | 51069/57107 [00:40<00:04, 1267.29it/s]
+Embedding Subgraphs:  90%|████████▉ | 51198/57107 [00:40<00:04, 1273.36it/s]
+Embedding Subgraphs:  90%|████████▉ | 51327/57107 [00:40<00:04, 1278.02it/s]
+Embedding Subgraphs:  90%|█████████ | 51455/57107 [00:40<00:04, 1268.44it/s]
+Embedding Subgraphs:  90%|█████████ | 51582/57107 [00:41<00:04, 1265.53it/s]
+Embedding Subgraphs:  91%|█████████ | 51709/57107 [00:41<00:04, 1264.51it/s]
+Embedding Subgraphs:  91%|█████████ | 51838/57107 [00:41<00:04, 1271.33it/s]
+Embedding Subgraphs:  91%|█████████ | 51967/57107 [00:41<00:04, 1274.70it/s]
+Embedding Subgraphs:  91%|█████████ | 52097/57107 [00:41<00:03, 1281.35it/s]
+Embedding Subgraphs:  91%|█████████▏| 52226/57107 [00:41<00:03, 1282.79it/s]
+Embedding Subgraphs:  92%|█████████▏| 52355/57107 [00:41<00:03, 1282.44it/s]
+Embedding Subgraphs:  92%|█████████▏| 52484/57107 [00:41<00:03, 1280.87it/s]
+Embedding Subgraphs:  92%|█████████▏| 52613/57107 [00:41<00:03, 1272.98it/s]
+Embedding Subgraphs:  92%|█████████▏| 52741/57107 [00:41<00:03, 1265.58it/s]
+Embedding Subgraphs:  93%|█████████▎| 52868/57107 [00:42<00:03, 1246.94it/s]
+Embedding Subgraphs:  93%|█████████▎| 52993/57107 [00:42<00:03, 1235.19it/s]
+Embedding Subgraphs:  93%|█████████▎| 53122/57107 [00:42<00:03, 1250.28it/s]
+Embedding Subgraphs:  93%|█████████▎| 53248/57107 [00:42<00:03, 1193.00it/s]
+Embedding Subgraphs:  93%|█████████▎| 53376/57107 [00:42<00:03, 1217.73it/s]
+Embedding Subgraphs:  94%|█████████▎| 53503/57107 [00:42<00:02, 1230.78it/s]
+Embedding Subgraphs:  94%|█████████▍| 53632/57107 [00:42<00:02, 1246.08it/s]
+Embedding Subgraphs:  94%|█████████▍| 53761/57107 [00:42<00:02, 1257.03it/s]
+Embedding Subgraphs:  94%|█████████▍| 53890/57107 [00:42<00:02, 1263.84it/s]
+Embedding Subgraphs:  95%|█████████▍| 54019/57107 [00:42<00:02, 1269.13it/s]
+Embedding Subgraphs:  95%|█████████▍| 54149/57107 [00:43<00:02, 1275.70it/s]
+Embedding Subgraphs:  95%|█████████▌| 54277/57107 [00:43<00:02, 1264.62it/s]
+Embedding Subgraphs:  95%|█████████▌| 54404/57107 [00:43<00:02, 1262.34it/s]
+Embedding Subgraphs:  95%|█████████▌| 54532/57107 [00:43<00:02, 1265.19it/s]
+Embedding Subgraphs:  96%|█████████▌| 54659/57107 [00:43<00:01, 1252.75it/s]
+Embedding Subgraphs:  96%|█████████▌| 54787/57107 [00:43<00:01, 1260.26it/s]
+Embedding Subgraphs:  96%|█████████▌| 54917/57107 [00:43<00:01, 1269.55it/s]
+Embedding Subgraphs:  96%|█████████▋| 55045/57107 [00:43<00:01, 1271.99it/s]
+Embedding Subgraphs:  97%|█████████▋| 55174/57107 [00:43<00:01, 1274.35it/s]
+Embedding Subgraphs:  97%|█████████▋| 55304/57107 [00:43<00:01, 1280.27it/s]
+Embedding Subgraphs:  97%|█████████▋| 55433/57107 [00:44<00:01, 1283.10it/s]
+Embedding Subgraphs:  97%|█████████▋| 55562/57107 [00:44<00:01, 1284.00it/s]
+Embedding Subgraphs:  98%|█████████▊| 55691/57107 [00:44<00:01, 1257.34it/s]
+Embedding Subgraphs:  98%|█████████▊| 55817/57107 [00:44<00:01, 1253.82it/s]
+Embedding Subgraphs:  98%|█████████▊| 55943/57107 [00:44<00:00, 1254.15it/s]
+Embedding Subgraphs:  98%|█████████▊| 56069/57107 [00:44<00:00, 1251.20it/s]
+Embedding Subgraphs:  98%|█████████▊| 56195/57107 [00:44<00:00, 1242.24it/s]
+Embedding Subgraphs:  99%|█████████▊| 56321/57107 [00:44<00:00, 1246.69it/s]
+Embedding Subgraphs:  99%|█████████▉| 56448/57107 [00:44<00:00, 1250.96it/s]
+Embedding Subgraphs:  99%|█████████▉| 56576/57107 [00:44<00:00, 1258.12it/s]
+Embedding Subgraphs:  99%|█████████▉| 56703/57107 [00:45<00:00, 1259.90it/s]
+Embedding Subgraphs: 100%|█████████▉| 56830/57107 [00:45<00:00, 1258.26it/s]
+Embedding Subgraphs: 100%|█████████▉| 56958/57107 [00:45<00:00, 1263.94it/s]
+Embedding Subgraphs: 100%|█████████▉| 57085/57107 [00:45<00:00, 1256.90it/s]
+Embedding Subgraphs: 100%|██████████| 57107/57107 [00:45<00:00, 1257.45it/s]
+2024-09-03 14:58:04,228 - INFO - Epoch:10,acc_train:0.54,acc_train_attach:0.29,cos_loss:0.0694
+2024-09-03 14:58:04,229 - INFO - loss_inner:1.0479,loss_outter:1.0554,acc_outter:0.3555
+2024-09-03 14:59:53,417 - INFO - Epoch:20,acc_train:0.59,acc_train_attach:0.48,cos_loss:0.0610
+2024-09-03 14:59:53,419 - INFO - loss_inner:1.0026,loss_outter:0.9797,acc_outter:0.5665
+2024-09-03 15:01:36,120 - INFO - Epoch:30,acc_train:0.58,acc_train_attach:0.90,cos_loss:0.0621
+2024-09-03 15:01:36,126 - INFO - loss_inner:0.9365,loss_outter:0.9082,acc_outter:0.7700
+2024-09-03 15:03:15,949 - INFO - Epoch:40,acc_train:0.63,acc_train_attach:0.99,cos_loss:0.0563
+2024-09-03 15:03:15,950 - INFO - loss_inner:0.8672,loss_outter:0.7986,acc_outter:0.9688
+2024-09-03 15:04:57,119 - INFO - Epoch:50,acc_train:0.70,acc_train_attach:1.00,cos_loss:0.0543
+2024-09-03 15:04:57,121 - INFO - loss_inner:0.8015,loss_outter:0.7671,acc_outter:0.8718
+2024-09-03 15:06:37,870 - INFO - Epoch:60,acc_train:0.76,acc_train_attach:0.99,cos_loss:0.0529
+2024-09-03 15:06:37,873 - INFO - loss_inner:0.7309,loss_outter:0.6845,acc_outter:0.9457
+2024-09-03 15:08:20,423 - INFO - Epoch:70,acc_train:0.80,acc_train_attach:0.99,cos_loss:0.0543
+2024-09-03 15:08:20,438 - INFO - loss_inner:0.6551,loss_outter:0.6293,acc_outter:0.9383
+2024-09-03 15:10:02,660 - INFO - Epoch:80,acc_train:0.80,acc_train_attach:0.99,cos_loss:0.0553
+2024-09-03 15:10:02,661 - INFO - loss_inner:0.5972,loss_outter:0.5725,acc_outter:0.9566
+2024-09-03 15:11:44,810 - INFO - Epoch:90,acc_train:0.81,acc_train_attach:0.98,cos_loss:0.0566
+2024-09-03 15:11:44,813 - INFO - loss_inner:0.5515,loss_outter:0.5256,acc_outter:0.9444
+2024-09-03 15:15:43,691 - INFO - Epoch:100,val_acc:0.9513
+2024-09-03 15:15:43,875 - INFO - Epoch:100,acc_train:0.83,acc_train_attach:0.97,cos_loss:0.0564
+2024-09-03 15:15:43,876 - INFO - loss_inner:0.5118,loss_outter:0.4891,acc_outter:0.9545
+2024-09-03 15:17:35,843 - INFO - Epoch:110,acc_train:0.85,acc_train_attach:0.97,cos_loss:0.0542
+2024-09-03 15:17:35,845 - INFO - loss_inner:0.4689,loss_outter:0.4422,acc_outter:0.9647
+2024-09-03 15:19:28,028 - INFO - Epoch:120,acc_train:0.85,acc_train_attach:1.00,cos_loss:0.0547
+2024-09-03 15:19:28,029 - INFO - loss_inner:0.4444,loss_outter:0.4232,acc_outter:0.9634
+2024-09-03 15:21:19,104 - INFO - Epoch:130,acc_train:0.85,acc_train_attach:0.98,cos_loss:0.0537
+2024-09-03 15:21:19,106 - INFO - loss_inner:0.4236,loss_outter:0.3987,acc_outter:0.9701
+2024-09-03 15:23:09,764 - INFO - Epoch:140,acc_train:0.86,acc_train_attach:0.98,cos_loss:0.0535
+2024-09-03 15:23:09,766 - INFO - loss_inner:0.4062,loss_outter:0.3830,acc_outter:0.9729
+2024-09-03 15:24:53,064 - INFO - Epoch:150,acc_train:0.86,acc_train_attach:0.98,cos_loss:0.0534
+2024-09-03 15:24:53,066 - INFO - loss_inner:0.3938,loss_outter:0.3746,acc_outter:0.9674
+2024-09-03 15:26:35,789 - INFO - Epoch:160,acc_train:0.86,acc_train_attach:0.99,cos_loss:0.0549
+2024-09-03 15:26:35,790 - INFO - loss_inner:0.3843,loss_outter:0.3672,acc_outter:0.9735
+2024-09-03 15:28:18,068 - INFO - Epoch:170,acc_train:0.87,acc_train_attach:0.97,cos_loss:0.0544
+2024-09-03 15:28:18,074 - INFO - loss_inner:0.3745,loss_outter:0.3618,acc_outter:0.9647
+2024-09-03 15:30:00,489 - INFO - Epoch:180,acc_train:0.87,acc_train_attach:0.98,cos_loss:0.0554
+2024-09-03 15:30:00,490 - INFO - loss_inner:0.3647,loss_outter:0.3522,acc_outter:0.9586
+2024-09-03 15:31:42,541 - INFO - Epoch:190,acc_train:0.87,acc_train_attach:0.99,cos_loss:0.0548
+2024-09-03 15:31:42,542 - INFO - loss_inner:0.3584,loss_outter:0.3438,acc_outter:0.9668
+2024-09-03 15:35:27,244 - INFO - Epoch:200,val_acc:0.9452
+2024-09-03 15:35:27,250 - INFO - Epoch:200,acc_train:0.87,acc_train_attach:0.99,cos_loss:0.0547
+2024-09-03 15:35:27,250 - INFO - loss_inner:0.3516,loss_outter:0.3446,acc_outter:0.9620
+2024-09-03 15:37:09,923 - INFO - Epoch:210,acc_train:0.88,acc_train_attach:0.99,cos_loss:0.0547
+2024-09-03 15:37:09,925 - INFO - loss_inner:0.3485,loss_outter:0.3395,acc_outter:0.9498
+2024-09-03 15:38:53,132 - INFO - Epoch:220,acc_train:0.88,acc_train_attach:0.99,cos_loss:0.0547
+2024-09-03 15:38:53,133 - INFO - loss_inner:0.3437,loss_outter:0.3420,acc_outter:0.9607
+2024-09-03 15:40:36,292 - INFO - Epoch:230,acc_train:0.88,acc_train_attach:0.98,cos_loss:0.0540
+2024-09-03 15:40:36,293 - INFO - loss_inner:0.3426,loss_outter:0.3349,acc_outter:0.9423
+2024-09-03 15:42:19,502 - INFO - Epoch:240,acc_train:0.88,acc_train_attach:0.96,cos_loss:0.0544
+2024-09-03 15:42:19,505 - INFO - loss_inner:0.3388,loss_outter:0.3240,acc_outter:0.9661
+2024-09-03 15:44:02,065 - INFO - Epoch:250,acc_train:0.88,acc_train_attach:0.96,cos_loss:0.0547
+2024-09-03 15:44:02,072 - INFO - loss_inner:0.3360,loss_outter:0.3213,acc_outter:0.9681
+2024-09-03 15:45:45,095 - INFO - Epoch:260,acc_train:0.88,acc_train_attach:0.97,cos_loss:0.0546
+2024-09-03 15:45:45,100 - INFO - loss_inner:0.3367,loss_outter:0.3886,acc_outter:0.8948
+2024-09-03 15:47:27,793 - INFO - Epoch:270,acc_train:0.88,acc_train_attach:0.98,cos_loss:0.0558
+2024-09-03 15:47:27,795 - INFO - loss_inner:0.3333,loss_outter:0.3181,acc_outter:0.9729
+2024-09-03 15:49:11,430 - INFO - Epoch:280,acc_train:0.88,acc_train_attach:0.97,cos_loss:0.0542
+2024-09-03 15:49:11,433 - INFO - loss_inner:0.3351,loss_outter:0.3434,acc_outter:0.9545
+2024-09-03 15:50:54,421 - INFO - Epoch:290,acc_train:0.88,acc_train_attach:0.99,cos_loss:0.0541
+2024-09-03 15:50:54,422 - INFO - loss_inner:0.3504,loss_outter:0.3608,acc_outter:0.9593
+2024-09-03 15:54:42,508 - INFO - Epoch:300,val_acc:0.9317
+2024-09-03 15:54:42,512 - INFO - Epoch:300,acc_train:0.88,acc_train_attach:0.99,cos_loss:0.0512
+2024-09-03 15:54:42,512 - INFO - loss_inner:0.3439,loss_outter:0.3346,acc_outter:0.9749
+2024-09-03 15:56:32,043 - INFO - Epoch:310,acc_train:0.88,acc_train_attach:1.00,cos_loss:0.0503
+2024-09-03 15:56:32,046 - INFO - loss_inner:0.3323,loss_outter:0.3263,acc_outter:0.9688
+2024-09-03 15:58:14,192 - INFO - Epoch:320,acc_train:0.88,acc_train_attach:0.99,cos_loss:0.0509
+2024-09-03 15:58:14,198 - INFO - loss_inner:0.3246,loss_outter:0.3241,acc_outter:0.9484
+2024-09-03 15:59:56,325 - INFO - Epoch:330,acc_train:0.89,acc_train_attach:0.96,cos_loss:0.0514
+2024-09-03 15:59:56,327 - INFO - loss_inner:0.3205,loss_outter:0.3043,acc_outter:0.9661
+2024-09-03 16:01:38,327 - INFO - Epoch:340,acc_train:0.89,acc_train_attach:0.97,cos_loss:0.0542
+2024-09-03 16:01:38,328 - INFO - loss_inner:0.3147,loss_outter:0.3052,acc_outter:0.9681
+2024-09-03 16:03:20,572 - INFO - Epoch:350,acc_train:0.89,acc_train_attach:0.98,cos_loss:0.0533
+2024-09-03 16:03:20,578 - INFO - loss_inner:0.3128,loss_outter:0.2995,acc_outter:0.9735
+2024-09-03 16:05:02,983 - INFO - Epoch:360,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0543
+2024-09-03 16:05:02,988 - INFO - loss_inner:0.3102,loss_outter:0.3067,acc_outter:0.9573
+2024-09-03 16:06:46,303 - INFO - Epoch:370,acc_train:0.89,acc_train_attach:0.98,cos_loss:0.0536
+2024-09-03 16:06:46,305 - INFO - loss_inner:0.3089,loss_outter:0.2969,acc_outter:0.9668
+2024-09-03 16:08:29,414 - INFO - Epoch:380,acc_train:0.89,acc_train_attach:0.96,cos_loss:0.0516
+2024-09-03 16:08:29,415 - INFO - loss_inner:0.3081,loss_outter:0.3029,acc_outter:0.9715
+2024-09-03 16:10:12,308 - INFO - Epoch:390,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0537
+2024-09-03 16:10:12,309 - INFO - loss_inner:0.3062,loss_outter:0.3037,acc_outter:0.9634
+2024-09-03 16:13:59,399 - INFO - Epoch:400,val_acc:0.9388
+2024-09-03 16:13:59,401 - INFO - Epoch:400,acc_train:0.89,acc_train_attach:0.98,cos_loss:0.0540
+2024-09-03 16:13:59,401 - INFO - loss_inner:0.3029,loss_outter:0.3001,acc_outter:0.9708
+2024-09-03 16:15:42,099 - INFO - Epoch:410,acc_train:0.89,acc_train_attach:0.98,cos_loss:0.0534
+2024-09-03 16:15:42,101 - INFO - loss_inner:0.3025,loss_outter:0.3038,acc_outter:0.9688
+2024-09-03 16:17:24,700 - INFO - Epoch:420,acc_train:0.89,acc_train_attach:1.00,cos_loss:0.0549
+2024-09-03 16:17:24,703 - INFO - loss_inner:0.2994,loss_outter:0.2958,acc_outter:0.9715
+2024-09-03 16:19:08,098 - INFO - Epoch:430,acc_train:0.89,acc_train_attach:0.98,cos_loss:0.0544
+2024-09-03 16:19:08,103 - INFO - loss_inner:0.3007,loss_outter:0.2902,acc_outter:0.9701
+2024-09-03 16:20:51,781 - INFO - Epoch:440,acc_train:0.89,acc_train_attach:0.97,cos_loss:0.0552
+2024-09-03 16:20:51,786 - INFO - loss_inner:0.3000,loss_outter:0.2892,acc_outter:0.9708
+2024-09-03 16:22:35,193 - INFO - Epoch:450,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0564
+2024-09-03 16:22:35,196 - INFO - loss_inner:0.2960,loss_outter:0.2951,acc_outter:0.9613
+2024-09-03 16:24:18,475 - INFO - Epoch:460,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0569
+2024-09-03 16:24:18,479 - INFO - loss_inner:0.2945,loss_outter:0.2940,acc_outter:0.9776
+2024-09-03 16:26:01,053 - INFO - Epoch:470,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0566
+2024-09-03 16:26:01,057 - INFO - loss_inner:0.2939,loss_outter:0.2970,acc_outter:0.9668
+2024-09-03 16:27:43,488 - INFO - Epoch:480,acc_train:0.89,acc_train_attach:0.97,cos_loss:0.0577
+2024-09-03 16:27:43,491 - INFO - loss_inner:0.2982,loss_outter:0.2971,acc_outter:0.9735
+2024-09-03 16:29:26,459 - INFO - Epoch:490,acc_train:0.89,acc_train_attach:0.98,cos_loss:0.0592
+2024-09-03 16:29:26,461 - INFO - loss_inner:0.3030,loss_outter:0.3133,acc_outter:0.9695
+2024-09-03 16:33:14,694 - INFO - Epoch:500,val_acc:0.9318
+2024-09-03 16:33:14,696 - INFO - Epoch:500,acc_train:0.89,acc_train_attach:0.97,cos_loss:0.0579
+2024-09-03 16:33:14,696 - INFO - loss_inner:0.3040,loss_outter:0.3005,acc_outter:0.9491
+2024-09-03 16:34:58,077 - INFO - Epoch:510,acc_train:0.89,acc_train_attach:0.96,cos_loss:0.0554
+2024-09-03 16:34:58,080 - INFO - loss_inner:0.3015,loss_outter:0.2999,acc_outter:0.9579
+2024-09-03 16:36:40,586 - INFO - Epoch:520,acc_train:0.86,acc_train_attach:0.84,cos_loss:0.0604
+2024-09-03 16:36:40,589 - INFO - loss_inner:0.4277,loss_outter:0.4205,acc_outter:0.9450
+2024-09-03 16:38:21,036 - INFO - Epoch:530,acc_train:0.83,acc_train_attach:1.00,cos_loss:0.0635
+2024-09-03 16:38:21,040 - INFO - loss_inner:0.4154,loss_outter:0.4239,acc_outter:0.9796
+2024-09-03 16:40:01,662 - INFO - Epoch:540,acc_train:0.87,acc_train_attach:0.99,cos_loss:0.0532
+2024-09-03 16:40:01,665 - INFO - loss_inner:0.3549,loss_outter:0.3775,acc_outter:0.9586
+2024-09-03 16:41:42,822 - INFO - Epoch:550,acc_train:0.88,acc_train_attach:1.00,cos_loss:0.0511
+2024-09-03 16:41:42,824 - INFO - loss_inner:0.3272,loss_outter:0.3724,acc_outter:0.9586
+2024-09-03 16:43:24,878 - INFO - Epoch:560,acc_train:0.88,acc_train_attach:0.99,cos_loss:0.0533
+2024-09-03 16:43:24,881 - INFO - loss_inner:0.3163,loss_outter:0.3516,acc_outter:0.9607
+2024-09-03 16:45:07,442 - INFO - Epoch:570,acc_train:0.88,acc_train_attach:0.96,cos_loss:0.0550
+2024-09-03 16:45:07,444 - INFO - loss_inner:0.3261,loss_outter:0.3953,acc_outter:0.9444
+2024-09-03 16:46:49,380 - INFO - Epoch:580,acc_train:0.88,acc_train_attach:0.99,cos_loss:0.0596
+2024-09-03 16:46:49,381 - INFO - loss_inner:0.3309,loss_outter:0.4294,acc_outter:0.8867
+2024-09-03 16:48:29,312 - INFO - Epoch:590,acc_train:0.88,acc_train_attach:0.99,cos_loss:0.0640
+2024-09-03 16:48:29,318 - INFO - loss_inner:0.3479,loss_outter:0.3952,acc_outter:0.9566
+2024-09-03 16:52:14,548 - INFO - Epoch:600,val_acc:0.8116
+2024-09-03 16:52:14,554 - INFO - Epoch:600,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0628
+2024-09-03 16:52:14,554 - INFO - loss_inner:0.3311,loss_outter:0.3802,acc_outter:0.9057
+2024-09-03 16:53:57,010 - INFO - Epoch:610,acc_train:0.89,acc_train_attach:1.00,cos_loss:0.0578
+2024-09-03 16:53:57,013 - INFO - loss_inner:0.3206,loss_outter:0.3303,acc_outter:0.9579
+2024-09-03 16:55:38,505 - INFO - Epoch:620,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0545
+2024-09-03 16:55:38,508 - INFO - loss_inner:0.3096,loss_outter:0.3357,acc_outter:0.9593
+2024-09-03 16:57:20,633 - INFO - Epoch:630,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0517
+2024-09-03 16:57:20,636 - INFO - loss_inner:0.3061,loss_outter:0.3190,acc_outter:0.9389
+2024-09-03 16:59:03,498 - INFO - Epoch:640,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0493
+2024-09-03 16:59:03,499 - INFO - loss_inner:0.3010,loss_outter:0.3409,acc_outter:0.8691
+2024-09-03 17:00:46,601 - INFO - Epoch:650,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0510
+2024-09-03 17:00:46,608 - INFO - loss_inner:0.3056,loss_outter:0.3324,acc_outter:0.8779
+2024-09-03 17:02:30,496 - INFO - Epoch:660,acc_train:0.89,acc_train_attach:0.96,cos_loss:0.0497
+2024-09-03 17:02:30,498 - INFO - loss_inner:0.3067,loss_outter:0.3706,acc_outter:0.8989
+2024-09-03 17:04:14,344 - INFO - Epoch:670,acc_train:0.89,acc_train_attach:1.00,cos_loss:0.0517
+2024-09-03 17:04:14,347 - INFO - loss_inner:0.2996,loss_outter:0.4213,acc_outter:0.9138
+2024-09-03 17:05:58,142 - INFO - Epoch:680,acc_train:0.89,acc_train_attach:0.99,cos_loss:0.0531
+2024-09-03 17:05:58,145 - INFO - loss_inner:0.2882,loss_outter:0.3097,acc_outter:0.9729
+2024-09-03 17:07:41,751 - INFO - Epoch:690,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0534
+2024-09-03 17:07:41,753 - INFO - loss_inner:0.2879,loss_outter:0.3112,acc_outter:0.9498
+2024-09-03 17:11:28,609 - INFO - Epoch:700,val_acc:0.9574
+2024-09-03 17:11:28,690 - INFO - Epoch:700,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0535
+2024-09-03 17:11:28,691 - INFO - loss_inner:0.2900,loss_outter:0.2975,acc_outter:0.9674
+2024-09-03 17:13:10,351 - INFO - Epoch:710,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0534
+2024-09-03 17:13:10,353 - INFO - loss_inner:0.2892,loss_outter:0.2899,acc_outter:0.9640
+2024-09-03 17:14:51,867 - INFO - Epoch:720,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0523
+2024-09-03 17:14:51,869 - INFO - loss_inner:0.2870,loss_outter:0.2822,acc_outter:0.9566
+2024-09-03 17:16:34,249 - INFO - Epoch:730,acc_train:0.90,acc_train_attach:0.97,cos_loss:0.0527
+2024-09-03 17:16:34,252 - INFO - loss_inner:0.2834,loss_outter:0.2906,acc_outter:0.9532
+2024-09-03 17:18:16,690 - INFO - Epoch:740,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0512
+2024-09-03 17:18:16,693 - INFO - loss_inner:0.2808,loss_outter:0.2955,acc_outter:0.9396
+2024-09-03 17:19:59,902 - INFO - Epoch:750,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0515
+2024-09-03 17:19:59,911 - INFO - loss_inner:0.2829,loss_outter:0.2771,acc_outter:0.9620
+2024-09-03 17:21:41,576 - INFO - Epoch:760,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0506
+2024-09-03 17:21:41,579 - INFO - loss_inner:0.2795,loss_outter:0.2855,acc_outter:0.9545
+2024-09-03 17:23:22,661 - INFO - Epoch:770,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0510
+2024-09-03 17:23:22,666 - INFO - loss_inner:0.2826,loss_outter:0.2798,acc_outter:0.9640
+2024-09-03 17:25:03,613 - INFO - Epoch:780,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0527
+2024-09-03 17:25:03,620 - INFO - loss_inner:0.2785,loss_outter:0.2727,acc_outter:0.9695
+2024-09-03 17:26:45,016 - INFO - Epoch:790,acc_train:0.90,acc_train_attach:0.97,cos_loss:0.0525
+2024-09-03 17:26:45,021 - INFO - loss_inner:0.2800,loss_outter:0.2743,acc_outter:0.9742
+2024-09-03 17:30:30,477 - INFO - Epoch:800,val_acc:0.9647
+2024-09-03 17:30:30,559 - INFO - Epoch:800,acc_train:0.90,acc_train_attach:1.00,cos_loss:0.0522
+2024-09-03 17:30:30,559 - INFO - loss_inner:0.2809,loss_outter:0.3180,acc_outter:0.9274
+2024-09-03 17:32:11,389 - INFO - Epoch:810,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0526
+2024-09-03 17:32:11,390 - INFO - loss_inner:0.2790,loss_outter:0.2743,acc_outter:0.9661
+2024-09-03 17:33:51,862 - INFO - Epoch:820,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0526
+2024-09-03 17:33:51,865 - INFO - loss_inner:0.2768,loss_outter:0.2791,acc_outter:0.9647
+2024-09-03 17:35:33,959 - INFO - Epoch:830,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0526
+2024-09-03 17:35:33,962 - INFO - loss_inner:0.2777,loss_outter:0.2756,acc_outter:0.9729
+2024-09-03 17:37:16,039 - INFO - Epoch:840,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0539
+2024-09-03 17:37:16,042 - INFO - loss_inner:0.2758,loss_outter:0.2678,acc_outter:0.9729
+2024-09-03 17:38:58,079 - INFO - Epoch:850,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0520
+2024-09-03 17:38:58,084 - INFO - loss_inner:0.2739,loss_outter:0.2753,acc_outter:0.9620
+2024-09-03 17:40:39,193 - INFO - Epoch:860,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0541
+2024-09-03 17:40:39,196 - INFO - loss_inner:0.2750,loss_outter:0.2740,acc_outter:0.9715
+2024-09-03 17:42:20,760 - INFO - Epoch:870,acc_train:0.90,acc_train_attach:1.00,cos_loss:0.0515
+2024-09-03 17:42:20,762 - INFO - loss_inner:0.2799,loss_outter:0.2821,acc_outter:0.9735
+2024-09-03 17:44:01,981 - INFO - Epoch:880,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0541
+2024-09-03 17:44:01,983 - INFO - loss_inner:0.2749,loss_outter:0.2799,acc_outter:0.9681
+2024-09-03 17:45:43,194 - INFO - Epoch:890,acc_train:0.90,acc_train_attach:1.00,cos_loss:0.0539
+2024-09-03 17:45:43,196 - INFO - loss_inner:0.2748,loss_outter:0.2790,acc_outter:0.9613
+2024-09-03 17:49:27,031 - INFO - Epoch:900,val_acc:0.9346
+2024-09-03 17:49:27,032 - INFO - Epoch:900,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0542
+2024-09-03 17:49:27,032 - INFO - loss_inner:0.2768,loss_outter:0.2781,acc_outter:0.9613
+2024-09-03 17:51:09,222 - INFO - Epoch:910,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0532
+2024-09-03 17:51:09,224 - INFO - loss_inner:0.2722,loss_outter:0.2673,acc_outter:0.9695
+2024-09-03 17:52:50,537 - INFO - Epoch:920,acc_train:0.90,acc_train_attach:0.97,cos_loss:0.0541
+2024-09-03 17:52:50,540 - INFO - loss_inner:0.2791,loss_outter:0.2711,acc_outter:0.9586
+2024-09-03 17:54:32,338 - INFO - Epoch:930,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0543
+2024-09-03 17:54:32,340 - INFO - loss_inner:0.2719,loss_outter:0.2689,acc_outter:0.9715
+2024-09-03 17:56:13,480 - INFO - Epoch:940,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0534
+2024-09-03 17:56:13,482 - INFO - loss_inner:0.2740,loss_outter:0.2700,acc_outter:0.9668
+2024-09-03 17:57:54,570 - INFO - Epoch:950,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0536
+2024-09-03 17:57:54,572 - INFO - loss_inner:0.2726,loss_outter:0.2665,acc_outter:0.9640
+2024-09-03 17:59:36,596 - INFO - Epoch:960,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0530
+2024-09-03 17:59:36,598 - INFO - loss_inner:0.2714,loss_outter:0.2698,acc_outter:0.9647
+2024-09-03 18:01:18,397 - INFO - Epoch:970,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0529
+2024-09-03 18:01:18,398 - INFO - loss_inner:0.2707,loss_outter:0.2732,acc_outter:0.9607
+2024-09-03 18:03:00,404 - INFO - Epoch:980,acc_train:0.90,acc_train_attach:0.98,cos_loss:0.0535
+2024-09-03 18:03:00,406 - INFO - loss_inner:0.2727,loss_outter:0.2671,acc_outter:0.9715
+2024-09-03 18:04:42,156 - INFO - Epoch:990,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0538
+2024-09-03 18:04:42,158 - INFO - loss_inner:0.2701,loss_outter:0.3297,acc_outter:0.9471
+2024-09-03 18:08:27,907 - INFO - Epoch:1000,val_acc:0.9340
+2024-09-03 18:08:27,908 - INFO - Epoch:1000,acc_train:0.90,acc_train_attach:0.99,cos_loss:0.0531
+2024-09-03 18:08:27,908 - INFO - loss_inner:0.2701,loss_outter:0.2661,acc_outter:0.9708
+slurmstepd: error: *** JOB 15869329 ON SH-IDC1-10-140-0-170 CANCELLED AT 2024-09-03T20:11:49 ***
