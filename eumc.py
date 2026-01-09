@@ -275,7 +275,7 @@ class EUMC(torch.nn.Module):
             trojan_edge_list.append(insert_edge_index)
             
            
-                
+            start+=self.args.prompt_size
             weight = weight[:int(trojan_edge_list[-1].shape[1]/2)-connect_num]
                
 
