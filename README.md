@@ -3,7 +3,7 @@
 
 <table style="width:20%; border-collapse: collapse;">
   <tr>
-    <th style="border: 1px solid black;text-align:center;"><a href="https://arxiv.org/abs/2510.22555">Paper</a></th>
+    <th style="border: 1px solid black;text-align:center;"><a href="https://arxiv.org/abs/2412.17213">Paper</a></th>
   </tr>
 </table>
 
